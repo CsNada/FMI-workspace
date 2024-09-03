@@ -185,7 +185,7 @@
 
 
         <!--the page contant in the right-->
-        <section class="w-full min-h-max p-10 z-10 bg-[url('img/bg.png')]  bg-cover">
+        <section class="w-full min-h-max p-10 z-10 bg-[url('img/bg.png')] bg-cover">
 
             <!--search input-->
             <div class="flex p-2 border border-gray-400 rounded-xl w-[300px] h-[50px] items-center justify-between px-4">
@@ -205,13 +205,10 @@
 
             <!--add team button-->
             <div class="mt-5">
-                <div class="w-32 p-1.5 px-4 bg-[#368888] flex justify-between fill-white text-white rounded-xl cursor-pointer hover:bg-[#338181] hover:scale-95 transition-all">
-                    <div class="flex items-center text-lg font-bold">
-                        +
-                    </div>
-
+                <button id="open-modal" class="min-w-max p-1.5 px-3 bg-[#368888] flex justify-between fill-white text-white rounded-xl cursor-pointer hover:bg-[#338181] hover:scale-95 transition-all text-sm gap-2">
+                    <div class="flex items-center font-bold">+</div>
                     <div class="flex items-center">اضافة فريق</div>
-                </div>
+                </button>
                 
             </div>
 
@@ -225,7 +222,7 @@
                         <!--team profile and button-->
                         <div class="flex justify-between">
                             <p class="h-11 w-11 rounded-md bg-green-700 flex justify-center items-center text-white pointer-events-none">1</p>
-                            <p class="text-xs rounded-md border border-black p-2 h-fit cursor-pointer hover:scale-95 hover:bg-gray-50 transition-all">عرض التفاصيل</p>
+                            <a href="detailes.html" class="text-xs rounded-md border border-black p-2 h-fit cursor-pointer hover:scale-95 hover:bg-gray-50 transition-all">عرض التفاصيل</a>
                         </div>
 
                         <!--team name-->
@@ -366,6 +363,56 @@
                 
         </section>
     </div>
+
+    <!--add team modal-->
+    <div id="modal-wrapper" class="fixed z-50 inset-0 hidden">
+        <div class="flex items-center justify-center min-h-screen bg-gray-400 bg-opacity-50 transition-all">
+            <!--modal box-->
+            <div class="bg-white rounded-xl">
+
+                <!--X button-->
+                <div class="w-[500px] border-b-2 border-gray-400">
+                    <button id="close-modal" class="m-4">
+                        <svg width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 28.4375C7.5875 28.4375 1.5625 22.4125 1.5625 15C1.5625 7.5875 7.5875 1.5625 15 1.5625C22.4125 1.5625 28.4375 7.5875 28.4375 15C28.4375 22.4125 22.4125 28.4375 15 28.4375ZM15 3.4375C8.625 3.4375 3.4375 8.625 3.4375 15C3.4375 21.375 8.625 26.5625 15 26.5625C21.375 26.5625 26.5625 21.375 26.5625 15C26.5625 8.625 21.375 3.4375 15 3.4375Z" fill="#292D32"/>
+                            <path d="M11.4627 19.4752C11.2252 19.4752 10.9877 19.3877 10.8002 19.2002C10.4377 18.8377 10.4377 18.2377 10.8002 17.8752L17.8752 10.8002C18.2377 10.4377 18.8377 10.4377 19.2002 10.8002C19.5627 11.1627 19.5627 11.7627 19.2002 12.1252L12.1252 19.2002C11.9502 19.3877 11.7002 19.4752 11.4627 19.4752Z" fill="#292D32"/>
+                            <path d="M18.5377 19.4752C18.3002 19.4752 18.0627 19.3877 17.8752 19.2002L10.8002 12.1252C10.4377 11.7627 10.4377 11.1627 10.8002 10.8002C11.1627 10.4377 11.7627 10.4377 12.1252 10.8002L19.2002 17.8752C19.5627 18.2377 19.5627 18.8377 19.2002 19.2002C19.0127 19.3877 18.7752 19.4752 18.5377 19.4752Z" fill="#292D32"/>
+                        </svg>   
+                    </button>
+                </div>
+
+                <div class="flex justify-center items-center h-[400px] border-2 m-6 border-dashed border-gray-400 rounded-xl">
+                    <div class="p-5 border border-gray-800 w-[335px]">
+                        <div class="font-semibold text-sm flex justify-start items-start cursor-default">
+                            <p>Add Team Name</p>
+                        </div>
+                        <div class="flex flex-col gap-1 border-b border-black">
+                            <p class="text-xs font-semibold mt-10 cursor-default pl-0.5">Team Name</p>
+                            <input type="email" placeholder="Enter The Team Name" class="placeholder:text-sm placeholder:font-semibold text-sm font-semibold p-0.5">
+                        </div>
+                        <button type="submit" class="bg-[#368888] flex gap-1 justify-center items-center text-white font-semibold rounded-md shadow-md px-1.5 pl-2 py-1 mt-10 hover:scale-95 hover:bg-[#308787] transition-all text-sm">
+                            <p>Next</p>
+                            <svg width="28" height="13" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.775391 10H24.4489" stroke="white" stroke-width="3"/>
+                                <path d="M16.459 1.41846L25.0406 10.0001L16.459 18.5817" stroke="white" stroke-width="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("open-modal").addEventListener("click", ()=>{
+            document.getElementById("modal-wrapper").classList.remove("hidden")
+        })
+
+        document.getElementById("close-modal").addEventListener("click", ()=>{
+            document.getElementById("modal-wrapper").classList.add("hidden")
+        })
+
+    </script>
 </body>
 
 </html>
