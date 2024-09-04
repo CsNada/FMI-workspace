@@ -199,13 +199,13 @@
 
                 <!--search input-->
                 <div>
-                    <input type="text" class="bg-[#F5F5F7] w-[230px] h-[30px] px-1" placeholder="Search by name">
+                    <input type="text" class="bg-[#F5F5F7] w-[230px] h-[30px] px-1 focus:outline-none" placeholder="Search by name">
                 </div>
             </div>
 
             <!--add team button-->
             <div class="mt-5">
-                <button id="open-modal" class="min-w-max p-1.5 px-3 bg-[#368888] flex justify-between fill-white text-white rounded-xl cursor-pointer hover:bg-[#338181] hover:scale-95 transition-all text-sm gap-2">
+                <button id="open-modal" class="min-w-max p-1.5 px-3 bg-[#368888] flex justify-between fill-white text-white rounded-md cursor-pointer hover:bg-[#338181] hover:scale-95 transition-all text-sm gap-2">
                     <div class="flex items-center font-bold">+</div>
                     <div class="flex items-center">اضافة فريق</div>
                 </button>
@@ -271,6 +271,7 @@
                     </button>
                 </div>
 
+                <!--modal content page 1-->
                 <div class="flex justify-center items-center h-[400px] border-2 m-6 border-dashed border-gray-400 rounded-xl">
                     <div class="p-5 border border-gray-800 w-[335px]">
                         <div class="font-semibold text-sm flex justify-start items-start cursor-default">
@@ -289,6 +290,170 @@
                         </button>
                     </div>
                 </div>
+
+                <!--modal content page 2-->
+                <div class="hidden flex justify-center items-center h-[400px] border-2 m-6 border-dashed border-gray-400 rounded-xl">
+                    <div class="p-5 border border-gray-800 w-[335px]">
+                        <div class="font-semibold text-sm flex justify-start items-start cursor-default">
+                            <p>Add Members</p>
+                        </div>
+
+                        <div class="pt-4">
+                            <div class="max-w-md mx-auto">
+                          
+                              <div class="relative">
+                                <div class="h-10 bg-white flex border border-gray-600 rounded items-center">
+                                  <input placeholder="Search..." value="" name="select" id="select" class="placeholder:text-sm px-4 appearance-none outline-none text-gray-800 w-full" checked />
+                          
+                                  <button class="cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-gray-600">
+                                    <svg class="w-4 h-4 mx-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                  </button>
+                                  <label for="show_more" class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-300 hover:text-gray-600 rotate-180">
+                                    <svg class="w-4 h-4 mx-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                      <polyline points="18 15 12 9 6 15"></polyline>
+                                    </svg>
+                                  </label>
+                                </div>
+                          
+                                <input type="checkbox" name="show_more" id="show_more" class="hidden peer" checked />
+                                <div class="absolute rounded shadow bg-white overflow-hidden hidden peer-checked:flex flex-col w-full mt-1 border border-gray-200">
+                                <div class="cursor-pointer group">
+                                    <a class="flex items-center gap-2 block p-2 pl-4 border-transparent border-l-4 group-hover:border-[#6C22A6] group-hover:bg-gray-100">
+                                        <img class="h-5 rounded-full" src="img/profile.png">
+                                        <p class="">user 1</p>
+                                    </a>
+                                </div>
+                                <div class="cursor-pointer group border-t">
+                                    <div class="cursor-pointer group">
+                                        <a class="flex items-center gap-2 block p-2 pl-4 border-transparent border-l-4 group-hover:border-[#6C22A6] group-hover:bg-gray-100">
+                                            <img class="h-5 rounded-full" src="img/profile.png">
+                                            <p class="">user 2</p>
+                                        </a>
+                                    </div>                                  
+                                </div>
+                                  <div class="cursor-pointer group border-t">
+                                    <div class="cursor-pointer group">
+                                        <a class="flex items-center gap-2 block p-2 pl-4 border-transparent border-l-4 group-hover:border-[#6C22A6] group-hover:bg-gray-100">
+                                            <img class="h-5 rounded-full" src="img/profile.png">
+                                            <p class="">user 3</p>
+                                        </a>
+                                      </div>
+                                    </div>
+                                  <div class="cursor-pointer group border-t">
+                                    <div class="cursor-pointer group">
+                                        <a class="flex items-center gap-2 block p-2 pl-4 border-transparent border-l-4 group-hover:border-[#6C22A6] group-hover:bg-gray-100">
+                                            <img class="h-5 rounded-full" src="img/profile.png">
+                                            <p class="">user 4</p>
+                                        </a>
+                                      </div>                                  
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="bg-[#368888] flex gap-1 justify-center items-center text-white font-semibold rounded-md shadow-md px-1.5 pl-2 py-1 mt-10 hover:scale-95 hover:bg-[#308787] transition-all text-sm">
+                            <p>Next</p>
+                            <svg width="28" height="13" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.775391 10H24.4489" stroke="white" stroke-width="3"/>
+                                <path d="M16.459 1.41846L25.0406 10.0001L16.459 18.5817" stroke="white" stroke-width="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!--modal content page 3-->
+                <div class="hidden flex justify-center items-center h-[400px] border-2 m-6 border-dashed border-gray-400 rounded-xl">
+                    <div class="p-5 border border-gray-800 w-[335px]">
+                        <div class="font-semibold text-sm flex justify-start items-start cursor-default">
+                            <p>Chosess Admin</p>
+                        </div>
+
+                        <div class="pt-4">
+                            <div class="max-w-md mx-auto">
+                          
+                              <div class="relative">
+                                <div class="h-10 bg-white flex border border-gray-600 rounded items-center">
+                                  <input placeholder="Search..." value="" name="selectAdmin" id="selectAdmin" class="placeholder:text-sm px-4 appearance-none outline-none text-gray-800 w-full" checked />
+                          
+                                  <button class="cursor-pointer outline-none focus:outline-none transition-all text-gray-300 hover:text-gray-600">
+                                    <svg class="w-4 h-4 mx-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                  </button>
+                                  <label for="show_more_Admin" class="cursor-pointer outline-none focus:outline-none border-l border-gray-200 transition-all text-gray-300 hover:text-gray-600 rotate-180">
+                                    <svg class="w-4 h-4 mx-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                      <polyline points="18 15 12 9 6 15"></polyline>
+                                    </svg>
+                                  </label>
+                                </div>
+                          
+                                <input type="checkbox" name="show_more_Admin" id="show_more_Admin" class="hidden peer" checked />
+                                <div class="absolute rounded shadow bg-white overflow-hidden hidden peer-checked:flex flex-col w-full mt-1 border border-gray-200">
+                                <div class="cursor-pointer group">
+                                    <a class="flex items-center gap-2 block p-2 pl-4 border-transparent border-l-4 group-hover:border-[#6C22A6] group-hover:bg-gray-100">
+                                        <img class="h-5 rounded-full" src="img/profile.png">
+                                        <p class="">user 1</p>
+                                    </a>
+                                </div>
+                                <div class="cursor-pointer group border-t">
+                                    <div class="cursor-pointer group">
+                                        <a class="flex items-center gap-2 block p-2 pl-4 border-transparent border-l-4 group-hover:border-[#6C22A6] group-hover:bg-gray-100">
+                                            <img class="h-5 rounded-full" src="img/profile.png">
+                                            <p class="">user 2</p>
+                                        </a>
+                                    </div>                                  
+                                </div>
+                                  <div class="cursor-pointer group border-t">
+                                    <div class="cursor-pointer group">
+                                        <a class="flex items-center gap-2 block p-2 pl-4 border-transparent border-l-4 group-hover:border-[#6C22A6] group-hover:bg-gray-100">
+                                            <img class="h-5 rounded-full" src="img/profile.png">
+                                            <p class="">user 3</p>
+                                        </a>
+                                      </div>
+                                    </div>
+                                  <div class="cursor-pointer group border-t">
+                                    <div class="cursor-pointer group">
+                                        <a class="flex items-center gap-2 block p-2 pl-4 border-transparent border-l-4 group-hover:border-[#6C22A6] group-hover:bg-gray-100">
+                                            <img class="h-5 rounded-full" src="img/profile.png">
+                                            <p class="">user 4</p>
+                                        </a>
+                                      </div>                                  
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="bg-[#368888] flex gap-1 justify-center items-center text-white font-semibold rounded-md shadow-md px-1.5 pl-2 py-1 mt-10 hover:scale-95 hover:bg-[#308787] transition-all text-sm">
+                            <p>Next</p>
+                            <svg width="28" height="13" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0.775391 10H24.4489" stroke="white" stroke-width="3"/>
+                                <path d="M16.459 1.41846L25.0406 10.0001L16.459 18.5817" stroke="white" stroke-width="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!--modal content page 4-->
+                <div class="hidden flex justify-center items-center h-[400px] border-2 m-6 border-dashed border-gray-400 rounded-xl">
+                    <div class="flex flex-col gap-2 justify-center items-center">
+                        <svg width="100" height="100" viewBox="0 0 198 189" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="mask0_67_11913" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="198" height="189">
+                            <path d="M197.462 0.469238H0.538467V188.531H197.462V0.469238Z" fill="white"/>
+                            </mask>
+                            <g mask="url(#mask0_67_11913)">
+                            <path d="M99 188.531C125.114 188.531 150.158 178.624 168.623 160.99C187.088 143.356 197.462 119.438 197.462 94.5C197.462 69.5616 187.088 45.6443 168.623 28.0102C150.158 10.376 125.114 0.469238 99 0.469238C72.8865 0.469238 47.8422 10.376 29.3772 28.0102C10.9121 45.6443 0.538467 69.5616 0.538467 94.5C0.538467 119.438 10.9121 143.356 29.3772 160.99C47.8422 178.624 72.8865 188.531 99 188.531ZM142.462 77.2365L93.2308 124.252C89.6154 127.705 83.7692 127.705 80.1923 124.252L55.5769 100.744C51.9615 97.2915 51.9615 91.7085 55.5769 88.2925C59.1923 84.8765 65.0385 84.8398 68.6154 88.2925L86.6923 105.556L129.385 64.7481C133 61.2954 138.846 61.2954 142.423 64.7481C146 68.2008 146.038 73.7839 142.423 77.1998L142.462 77.2365Z" fill="#6C22A6"/>
+                            </g>
+                        </svg>
+                        <p class="text-sm text-gray-500">Your team has  been successfully add.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

@@ -375,8 +375,8 @@
             </div>
 
             <!--add user modal-->
-            <div id="modal-wrapper" class="fixed z-50 inset-0 hidden">
-                <div class="flex items-center justify-center min-h-screen bg-gray-400 bg-opacity-50 transition-all">
+            <div id="modal-wrapper" class="fixed z-50 inset-0 hidden animate-[wiggle_1s_ease-in-out_infinite]">
+                <div class="flex items-center justify-center min-h-screen bg-gray-400 bg-opacity-50">
                     <!--modal box-->
                     <div class="bg-white rounded-xl">
                         
@@ -398,7 +398,7 @@
                                 </div>
                                 <div class="flex flex-col gap-1 border-b border-black">
                                     <p class="text-xs font-semibold mt-10 cursor-default pl-0.5">Email</p>
-                                    <input type="email" placeholder="Enter The User Email" class="placeholder:text-sm placeholder:font-semibold text-sm font-semibold p-0.5">
+                                    <input type="email" placeholder="Enter The User Email" class="placeholder:text-sm placeholder:font-semibold text-sm font-semibold p-0.5 focus:outline-none">
                                 </div>
                                 <button type="submit" class="bg-[#368888] flex gap-1 justify-center items-center text-white font-semibold rounded-md shadow-md px-1.5 pl-2 py-1 mt-10 hover:scale-95 hover:bg-[#308787] transition-all text-sm">
                                     <p>Submit</p>
@@ -426,4 +426,6 @@
             
         </section>
     </div>
+
+
 </body>
