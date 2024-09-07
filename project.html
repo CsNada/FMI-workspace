@@ -1,0 +1,1013 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<!-- @vite('resources/css/app.css') -->
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams</title>
+
+    <!-- <link href="./output.css" rel="stylesheet"> -->
+
+    <!--for tailwindcss styles-->
+	<script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+		html {
+            scroll-behavior: smooth;
+
+            /* Hide scrollbar for Chrome, Safari and Opera */
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+
+            /* Hide scrollbar for IE, Edge and Firefox */
+            .no-scrollbar {
+                -ms-overflow-style: none;  /* IE and Edge */
+                scrollbar-width: none;  /* Firefox */
+            }   
+        }
+    </style>
+</head>
+<body class="z-10">
+
+    <div class="flex">
+
+        <!-- the menu in the left-->
+        <div class="w-[210px] h-screen sticky top-0 flex flex-col justify-between bg-[#F5F5F7]">
+
+            <!--the logo-->
+            <div class="flex justify-center pt-2">
+                <img class="h-32" src="img/Logo.png">
+            </div>
+
+            <!--the pages button switch-->
+            <div class="pb-10 font-bold">
+
+                <!------------------------->
+                <a class="flex mr-5 cursor-pointer h-10 fill-[#A7A7A7] hover:fill-gray-900 text-[#A7A7A7] hover:text-gray-900 hover:bg-[#6C22A6]/30 hover:rounded-br-full hover:rounded-tr-full transition-all">
+                    <!--the icon-->
+                    <div class="pl-6 flex items-center">
+                        <svg class="fill-inherit" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.135 9.56985C6.31082 9.56985 7.25314 10.5213 7.25314 11.7055L7.25314 14.5483C7.25314 15.7241 6.31082 16.6831 5.135 16.6831H2.31638C1.1489 16.6831 0.198242 15.7241 0.198242 14.5483L0.198242 11.7055C0.198242 10.5213 1.1489 9.56985 2.31638 9.56985L5.135 9.56985ZM14.7584 9.56985C15.9259 9.56985 16.8766 10.5213 16.8766 11.7055V14.5483C16.8766 15.7241 15.9259 16.6831 14.7584 16.6831H11.9398C10.764 16.6831 9.82167 15.7241 9.82167 14.5483V11.7055C9.82167 10.5213 10.764 9.56985 11.9398 9.56985L14.7584 9.56985ZM5.135 0.00512695C6.31082 0.00512695 7.25314 0.964126 7.25314 2.14078V4.98358C7.25314 6.16774 6.31082 7.1184 5.135 7.1184L2.31638 7.1184C1.1489 7.1184 0.198242 6.16774 0.198242 4.98358L0.198242 2.14078C0.198242 0.964126 1.1489 0.00512695 2.31638 0.00512695L5.135 0.00512695ZM14.7584 0.00512695C15.9259 0.00512695 16.8766 0.964126 16.8766 2.14078V4.98358C16.8766 6.16774 15.9259 7.1184 14.7584 7.1184H11.9398C10.764 7.1184 9.82167 6.16774 9.82167 4.98358L9.82167 2.14078C9.82167 0.964126 10.764 0.00512695 11.9398 0.00512695L14.7584 0.00512695Z"/>
+                        </svg>
+                    </div>
+
+                    <div class="flex items-center pl-3">
+                        <p class="">Dashboard</p>
+                    </div>
+
+                    <!-- <div class="flex justify-end items-center w-full">
+                        <div class="bg-white m-1 mr-2 p-1 rounded-full">
+                            <svg class="fill-gray-900 size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </div>
+                    </div> -->
+                    
+                </a>
+                <!------------------------->
+
+                <!------------------------->
+                <a href="project.html" class="bg-[#6C22A6]/30 flex cursor-pointer h-10 mt-2 text-gray-900 hover:bg-[#6C22A6]/30 rounded-r-full transition-all hover:mr-2 mr-5 pr-1">
+                    <!--the icon-->
+                    <div class="pl-6 flex items-center">
+                        <svg class="fill-inherit" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.4183 0.038642C13.6171 -0.0362805 14.7992 0.379956 15.69 1.19578C16.5058 2.08652 16.9221 3.26863 16.8555 4.47572L16.8555 12.251C16.9304 13.4581 16.5058 14.6402 15.6983 15.5309C14.8076 16.3468 13.6171 16.763 12.4183 16.6881L4.64299 16.6881C3.4359 16.763 2.25378 16.3468 1.36302 15.5309C0.547195 14.6402 0.130955 13.4581 0.205878 12.251L0.205878 4.47572C0.130955 3.26863 0.547195 2.08652 1.36302 1.19578C2.25378 0.379956 3.4359 -0.0362805 4.64299 0.038642L12.4183 0.038642ZM12.2019 3.84304C11.6858 3.32691 10.8533 3.32691 10.3371 3.84304L9.77938 4.40912C9.69614 4.49237 9.69614 4.63389 9.77938 4.71714C9.77938 4.71714 9.79573 4.73337 9.82481 4.76229L10.0296 4.96594C10.148 5.08378 10.2959 5.23096 10.4443 5.37895L10.9477 5.88212C11.0528 5.98763 11.1225 6.05834 11.128 6.06574C11.2196 6.16564 11.2778 6.29883 11.2778 6.44868C11.2778 6.74837 11.0364 6.99811 10.7284 6.99811C10.5869 6.99811 10.4537 6.93984 10.3621 6.84826L8.97188 5.46636C8.90528 5.39976 8.78873 5.39976 8.72214 5.46636L4.75121 9.43725C4.47649 9.71197 4.31832 10.0783 4.31 10.4695L4.26005 12.4425C4.26005 12.5507 4.29335 12.6506 4.36827 12.7255C4.4432 12.8004 4.54309 12.8421 4.65132 12.8421H6.60764C7.00723 12.8421 7.39017 12.6839 7.68154 12.4009L13.2841 6.78167C13.7919 6.26553 13.7919 5.43306 13.2841 4.92525L12.2019 3.84304Z"/>
+                        </svg>
+                    </div>
+
+                    <div class="flex items-center pl-3">
+                        <p class="">Projects</p>
+                    </div>
+
+                    <div class="flex justify-end items-center w-full">
+                        <div class="bg-white m-1 mr-2 p-1 rounded-full">
+                            <svg class="fill-gray-900 size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </div>
+                    </div>
+                    
+                </a>
+                <!------------------------->
+
+                <!------------------------->
+                <a class="flex mr-5 cursor-pointer h-10 mt-2 fill-[#A7A7A7] hover:fill-gray-900 text-[#A7A7A7] hover:text-gray-900 hover:bg-[#6C22A6]/30 hover:rounded-br-full hover:rounded-tr-full transition-all">
+                    <!--the icon-->
+                    <div class="pl-6 flex items-center">
+                        <svg class="fill-inherit" width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.4214 0.0515137C15.2556 0.0515137 16.8556 1.65901 16.8639 4.49318L16.8639 12.2765C16.8639 15.1098 15.2556 16.7182 12.4214 16.7182L4.63893 16.7182C1.80477 16.7182 0.197266 15.1098 0.197266 12.2765L0.197266 4.49318C0.197266 1.65901 1.80477 0.0515137 4.63893 0.0515137L12.4214 0.0515137ZM8.94727 3.49318C8.7131 3.35151 8.42977 3.35151 8.2056 3.49318C7.97977 3.63401 7.8556 3.89318 7.87977 4.15151L7.87977 12.6432C7.92227 13.0015 8.22143 13.2682 8.57143 13.2682C8.9306 13.2682 9.22977 13.0015 9.2631 12.6432L9.2631 4.15151C9.29643 3.89318 9.17227 3.63401 8.94727 3.49318ZM5.0556 6.22651C4.8306 6.08485 4.54643 6.08485 4.32227 6.22651C4.09643 6.36818 3.97227 6.62568 3.99727 6.88485L3.99727 12.6432C4.02977 13.0015 4.32977 13.2682 4.6881 13.2682C5.04727 13.2682 5.34643 13.0015 5.37977 12.6432L5.37977 6.88485C5.4056 6.62568 5.27977 6.36818 5.0556 6.22651ZM12.7714 9.25151C12.5473 9.10985 12.2639 9.10985 12.0306 9.25151C11.8048 9.39318 11.6806 9.64235 11.7139 9.90985L11.7139 12.6432C11.7473 13.0015 12.0464 13.2682 12.4056 13.2682C12.7556 13.2682 13.0548 13.0015 13.0973 12.6432L13.0973 9.90985C13.1214 9.64235 12.9973 9.39318 12.7714 9.25151Z"/>
+                        </svg>
+
+                    </div>
+
+                    <div class="flex items-center pl-3">
+                        <p class="">My Tasks</p>
+                    </div>
+
+                    <!-- <div class="flex justify-end items-center w-full">
+                        <div class="bg-white m-1 mr-2 p-1 rounded-full">
+                            <svg class="fill-gray-900 size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </div>
+                    </div> -->
+                    
+                </a>
+                <!------------------------->
+
+                <!------------------------->
+                <a href="index.html" class="flex mr-5 cursor-pointer h-10 mt-2 fill-[#A7A7A7] hover:fill-gray-900 text-[#A7A7A7] hover:text-gray-900 hover:bg-[#6C22A6]/30 hover:rounded-br-full hover:rounded-tr-full transition-all">
+                    <!--the icon-->
+                    <div class="pl-6 flex items-center">
+                        <svg class="fill-inherit" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.0293 2.90845C11.0293 3.57149 10.7659 4.20737 10.2971 4.67621C9.82822 5.14506 9.19234 5.40845 8.5293 5.40845C7.86626 5.40845 7.23037 5.14506 6.76153 4.67621C6.29269 4.20737 6.0293 3.57149 6.0293 2.90845C6.0293 2.24541 6.29269 1.60952 6.76153 1.14068C7.23037 0.671839 7.86626 0.408447 8.5293 0.408447C9.19234 0.408447 9.82822 0.671839 10.2971 1.14068C10.7659 1.60952 11.0293 2.24541 11.0293 2.90845ZM16.0293 3.40845C16.0293 3.93888 15.8186 4.44759 15.4435 4.82266C15.0684 5.19773 14.5597 5.40845 14.0293 5.40845C13.4989 5.40845 12.9902 5.19773 12.6151 4.82266C12.24 4.44759 12.0293 3.93888 12.0293 3.40845C12.0293 2.87801 12.24 2.36931 12.6151 1.99423C12.9902 1.61916 13.4989 1.40845 14.0293 1.40845C14.5597 1.40845 15.0684 1.61916 15.4435 1.99423C15.8186 2.36931 16.0293 2.87801 16.0293 3.40845ZM3.0293 5.40845C3.55973 5.40845 4.06844 5.19773 4.44351 4.82266C4.81858 4.44759 5.0293 3.93888 5.0293 3.40845C5.0293 2.87801 4.81858 2.36931 4.44351 1.99423C4.06844 1.61916 3.55973 1.40845 3.0293 1.40845C2.49886 1.40845 1.99016 1.61916 1.61508 1.99423C1.24001 2.36931 1.0293 2.87801 1.0293 3.40845C1.0293 3.93888 1.24001 4.44759 1.61508 4.82266C1.99016 5.19773 2.49886 5.40845 3.0293 5.40845ZM4.5293 7.65845C4.5293 6.96845 5.0893 6.40845 5.7793 6.40845H11.2793C11.9693 6.40845 12.5293 6.96845 12.5293 7.65845V12.4084C12.5293 13.4693 12.1079 14.4867 11.3577 15.2369C10.6076 15.987 9.59016 16.4084 8.5293 16.4084C7.46843 16.4084 6.45102 15.987 5.70087 15.2369C4.95072 14.4867 4.5293 13.4693 4.5293 12.4084V7.65845ZM3.5293 7.65845C3.5293 7.19545 3.6693 6.76645 3.9083 6.40845H1.7793C1.0893 6.40845 0.529297 6.96845 0.529297 7.65845V11.4084C0.52925 11.8366 0.620835 12.2597 0.797899 12.6495C0.974962 13.0393 1.2334 13.3867 1.55585 13.6683C1.8783 13.9499 2.25729 14.1593 2.66736 14.2823C3.07743 14.4053 3.50908 14.4391 3.9333 14.3814C3.6662 13.758 3.52875 13.0867 3.5293 12.4084V7.65845ZM13.5293 12.4084C13.5293 13.1084 13.3853 13.7764 13.1253 14.3814C13.2573 14.3994 13.392 14.4084 13.5293 14.4084C14.3249 14.4084 15.088 14.0924 15.6506 13.5298C16.2132 12.9672 16.5293 12.2041 16.5293 11.4084V7.65845C16.5293 6.96845 15.9693 6.40845 15.2793 6.40845H13.1503C13.3903 6.76645 13.5293 7.19545 13.5293 7.65845V12.4084Z"/>
+                        </svg>
+                    </div>
+
+                    <div class="flex items-center pl-3">
+                        <p class="">Teams</p>
+                    </div>
+
+                    <!-- <div class="flex justify-end items-center w-full">
+                        <div class="bg-white m-1 p-1 rounded-full ">
+                            <svg class="fill-gray-900 size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </div>
+                    </div> -->
+                    
+                </a>
+                <!------------------------->
+
+                <!------------------------->
+                <a class="flex mr-5 cursor-pointer h-10 mt-2 fill-[#A7A7A7] hover:fill-gray-900 text-[#A7A7A7] hover:text-gray-900 hover:bg-[#6C22A6]/30 hover:rounded-br-full hover:rounded-tr-full transition-all">
+                    <!--the icon-->
+                    <div class="pl-6 flex items-center">
+                        <svg class="fill-inherit" width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.1473 0.095459C14.9723 0.095459 16.8639 2.07879 16.8639 5.02879L16.8639 11.838C16.8639 14.7788 14.9723 16.7621 12.1473 16.7621L4.92227 16.7621C2.09727 16.7621 0.197266 14.7788 0.197266 11.838L0.197266 5.02879C0.197266 2.07879 2.09727 0.095459 4.92227 0.095459L12.1473 0.095459ZM12.0139 5.92879C11.7306 5.64546 11.2639 5.64546 10.9806 5.92879L7.53893 9.37046L6.0806 7.91213C5.79727 7.62879 5.3306 7.62879 5.04727 7.91213C4.76393 8.19546 4.76393 8.65379 5.04727 8.94546L7.0306 10.9205C7.17227 11.0621 7.3556 11.1288 7.53893 11.1288C7.7306 11.1288 7.91393 11.0621 8.0556 10.9205L12.0139 6.96213C12.2973 6.67879 12.2973 6.22046 12.0139 5.92879Z"/>
+                        </svg>
+                    </div>
+
+                    <div class="flex items-center pl-3">
+                        <p class="">Repost</p>
+                    </div>
+
+                    <!-- <div class="flex justify-end items-center w-full">
+                        <div class="bg-white m-1 mr-2 p-1 rounded-full">
+                            <svg class="fill-gray-900 size-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </div>
+                    </div> -->
+                    
+                </a>
+                <!------------------------->
+
+            </div>
+
+            <!--profile-->
+            <div>
+                <div class="flex bg-white p-1.5 rounded-full mx-3 cursor-pointer hover:bg-gray-50/50 hover:shadow-sm hover:scale-105 transition-all">
+                    <div>
+                        <img class="h-12 rounded-full" src="img/profile.png">
+                    </div>
+
+                    <div class="flex flex-col justify-center items-start pl-2">
+                        <p class="font-semibold">name</p>
+                        <p class="text-gray-500">positon</p>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-500 mt-2 w-[180px] ml-4 flex pt-4 pb-4">
+                    <div class="bg-[#368888] rounded-full p-3 pl-4 w-12 hover:w-36 flex justify-center transition-all cursor-pointer z-20">
+                        <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.09632 0.786621C10.1496 0.786621 11.8242 2.30918 11.8242 4.18368V7.84853L6.77516 7.84853C6.41332 7.84853 6.12721 8.10867 6.12721 8.43766C6.12721 8.75901 6.41332 9.02679 6.77516 9.02679L11.8242 9.02679L11.8242 12.684C11.8242 14.5585 10.1496 16.0887 8.07949 16.0887H3.98138C1.9197 16.0887 0.245117 14.5661 0.245117 12.6916L0.245117 4.19133C0.245117 2.30918 1.92812 0.786621 3.98979 0.786621L8.09632 0.786621ZM13.9251 5.79821C14.1732 5.56102 14.5785 5.56102 14.8266 5.79056L17.2417 8.01701C17.3657 8.13177 17.4319 8.27714 17.4319 8.43782C17.4319 8.59084 17.3657 8.74386 17.2417 8.85097L14.8266 11.0774C14.7026 11.1922 14.5371 11.2534 14.38 11.2534C14.2146 11.2534 14.0492 11.1922 13.9251 11.0774C13.677 10.8479 13.677 10.473 13.9251 10.2435L15.2484 9.02695H11.8243V7.84869L15.2484 7.84869L13.9251 6.63217C13.677 6.40264 13.677 6.02774 13.9251 5.79821Z" fill="white"/>
+                        </svg>
+                    </div>
+                    
+                    <p class="flex items-center pl-16 pt-2 text-[#368888] font-semibold absolute z-10 cursor-default">Logout</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!--the page contant in the right-->
+        <section class="w-full min-h-max p-10 z-10 bg-[url('img/bg.png')] bg-cover">
+
+            <!--add team button-->
+            <div class="flex justify-end">
+                <button id="open-modal" class="min-w-max p-1.5 px-3 bg-[#368888] flex justify-between fill-white text-white rounded-md cursor-pointer hover:bg-[#338181] hover:scale-95 transition-all text-sm gap-2">
+                    <div class="flex items-center font-bold">+</div>
+                    <div class="flex items-center">اضافة مشروع جديد</div>
+                </button>
+            </div>
+
+            <!--sorted by button-->
+            <div class="flex justify-between mt-3 mb-3">
+                <p class="text-xl font-semibold pointer-events-none">المشاريع</p>
+                <!--sorted By button-->
+                <div>
+                <button class="text-black bg-[#F5F5F7] hover:bg-gray-50 focus:bg-gray-50 focus:ring-2 focus:ring-[#368888]/30 font-sm rounded-lg text-sm px-3 py-1.5 text-center inline-flex items-center" type="button" data-dropdown-toggle="dropdown">
+                    Sorted By 
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                        </path>
+                    </svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div class="hidden bg-white text-base z-50 list-none divide-y divide-gray-100 rounded-lg shadow my-4" id="dropdown">
+                    <ul class="rounded-lg">
+                        <li>
+                            <button class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2 w-full flex justify-start rounded-t-lg">Deadline</button>
+                        </li>
+                        <li>
+                            <button class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2 w-full flex justify-start">Achievement</button>
+                        </li>
+                        <li>
+                            <button class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2 w-full flex justify-start">Alphabetic</button>
+                        </li>
+                        <li>
+                            <button class="text-sm hover:bg-gray-100 text-gray-700 block px-4 py-2 w-full flex justify-start rounded-b-lg">Creation Date</button>
+                        </li>
+                        </ul>
+                    </div>
+                    <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+                </div>
+            </div>
+
+            <!-- teams cards section 1 -->
+            <div class="relative mt-5 w-[960px] xl:w-[1160px] 2xl:w-[2000px] mb-10">
+                <button id="scroll-left" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700/50 text-white p-2 rounded-r hover:bg-gray-700 transition-all">
+                  &larr;
+                </button>
+                
+                <div class="flex gap-4 overflow-x-scroll no-scrollbar px-3" id="scroll-container">
+
+                    <!--team 1 card-->
+                    <div class="flex-shrink-0">
+                    <div class="h-72 w-72">
+                        <div class="bg-white rounded-md p-3 shadow-sm overflow-visible h-64">
+
+                        <!--project image-->
+                        <div class="flex justify-between">
+                            <img class="h-20 rounded-md w-full object-cover" src="img/project.jpg">
+                        </div>
+
+                        <!--project name-->
+                        <div>
+                            <p class="text-sm font-semibold mb-2 mt-2">project name</p>
+                            <p class="text-xs font-semibold text-gray-600">نوع المشروع</p>
+                            <p class="text-xs font-semibold text-gray-600 mt-2 mb-2">التقدم</p>
+                        </div>
+
+                        <!---->
+                        <div class="w-full h-1.5 rounded-full bg-[#BAC8FF] flex items-center">
+                            <div class="px-2 bg-[#6C22A6] h-1.5 rounded-tl-full rounded-bl-full w-20"></div>
+                            <div class="w-4 h-4 rounded-full bg-[#6C22A6] border-2 border-white"></div>
+                        </div>
+
+                         <!--team members profiles-->
+                        <div dir="rtl" class="flex justify-between items-center mt-4">
+                            <!--profile images-->
+                            <div class="mt-7 flex relative w-full h-full">
+                                <img class="border-2 border-white h-7 rounded-full absolute bottom-0" src="img/profile.png">
+                                <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-4" src="img/profile.png">
+                                <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-8" src="img/profile.png">
+                                <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-12" src="img/profile.png">
+                            </div>
+                            <div class="flex gap-2 w-full justify-end items-center text-sm">
+                                <p>1 Hour</p>
+                                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.25 10.0005C19.25 15.1095 15.109 19.2505 10 19.2505C4.891 19.2505 0.75 15.1095 0.75 10.0005C0.75 4.89149 4.891 0.750488 10 0.750488C15.109 0.750488 19.25 4.89149 19.25 10.0005Z" stroke="#54577A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M13.4311 12.9427L9.66113 10.6937V5.84668" stroke="#54577A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                    
+                            </div>
+                        </div>
+
+                        <!--veiw details button-->
+                        <button class="text-sm bg-[#368888] hover:bg-[#338181] rounded-full py-1 px-2 flex items-center gap-2 text-white shadow mt-3 overflow-visible transition-all hover:scale-105 shadow">
+                            <p>Veiw Details</p>
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.2244 6.7244H9.31594L5.78087 10.2595C5.49835 10.542 5.49835 11.0056 5.78087 11.2881C6.06338 11.5706 6.51976 11.5706 6.80227 11.2881L11.5761 6.51432C11.8586 6.23181 11.8586 5.77544 11.5761 5.49292L6.80952 0.711887C6.527 0.429371 6.07063 0.429371 5.78811 0.711887C5.5056 0.994402 5.5056 1.45077 5.78811 1.73329L9.31594 5.2756H1.2244C0.82598 5.2756 0.5 5.60158 0.5 6C0.5 6.39842 0.82598 6.7244 1.2244 6.7244Z" fill="white"/>
+                            </svg>                                
+                        </button>
+                        </div>
+
+                    </div>
+                    </div>
+
+                    <!--team 2 card-->
+                    <div class="flex-shrink-0">
+                        <div class="h-72 w-72">
+                            <div class="bg-white rounded-md p-3 shadow-sm overflow-visible h-64">
+    
+                            <!--project image-->
+                            <div class="flex justify-between">
+                                <img class="h-20 rounded-md w-full object-cover" src="img/project.jpg">
+                            </div>
+    
+                            <!--project name-->
+                            <div>
+                                <p class="text-sm font-semibold mb-2 mt-2">project name</p>
+                                <p class="text-xs font-semibold text-gray-600">نوع المشروع</p>
+                                <p class="text-xs font-semibold text-gray-600 mt-2 mb-2">التقدم</p>
+                            </div>
+    
+                            <!---->
+                            <div class="w-full h-1.5 rounded-full bg-[#BAC8FF] flex items-center">
+                                <div class="px-2 bg-[#6C22A6] h-1.5 rounded-tl-full rounded-bl-full w-20"></div>
+                                <div class="w-4 h-4 rounded-full bg-[#6C22A6] border-2 border-white"></div>
+                            </div>
+    
+                             <!--team members profiles-->
+                            <div dir="rtl" class="flex justify-between items-center mt-4">
+                                <!--profile images-->
+                                <div class="mt-7 flex relative w-full h-full">
+                                    <img class="border-2 border-white h-7 rounded-full absolute bottom-0" src="img/profile.png">
+                                    <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-4" src="img/profile.png">
+                                    <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-8" src="img/profile.png">
+                                    <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-12" src="img/profile.png">
+                                </div>
+                                <div class="flex gap-2 w-full justify-end items-center text-sm">
+                                    <p>1 Hour</p>
+                                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.25 10.0005C19.25 15.1095 15.109 19.2505 10 19.2505C4.891 19.2505 0.75 15.1095 0.75 10.0005C0.75 4.89149 4.891 0.750488 10 0.750488C15.109 0.750488 19.25 4.89149 19.25 10.0005Z" stroke="#54577A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M13.4311 12.9427L9.66113 10.6937V5.84668" stroke="#54577A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>                                    
+                                </div>
+                            </div>
+    
+                            <!--veiw details button-->
+                            <button class="text-sm bg-[#368888] hover:bg-[#338181] rounded-full py-1 px-2 flex items-center gap-2 text-white shadow mt-3 overflow-visible transition-all hover:scale-105 shadow">
+                                <p>Veiw Details</p>
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.2244 6.7244H9.31594L5.78087 10.2595C5.49835 10.542 5.49835 11.0056 5.78087 11.2881C6.06338 11.5706 6.51976 11.5706 6.80227 11.2881L11.5761 6.51432C11.8586 6.23181 11.8586 5.77544 11.5761 5.49292L6.80952 0.711887C6.527 0.429371 6.07063 0.429371 5.78811 0.711887C5.5056 0.994402 5.5056 1.45077 5.78811 1.73329L9.31594 5.2756H1.2244C0.82598 5.2756 0.5 5.60158 0.5 6C0.5 6.39842 0.82598 6.7244 1.2244 6.7244Z" fill="white"/>
+                                </svg>                                
+                            </button>
+                            </div>
+    
+                        </div>
+                    </div>
+
+                    <!--team 3 card-->
+                    <div class="flex-shrink-0">
+                        <div class="h-72 w-72">
+                            <div class="bg-white rounded-md p-3 shadow-sm overflow-visible h-64">
+    
+                            <!--project image-->
+                            <div class="flex justify-between">
+                                <img class="h-20 rounded-md w-full object-cover" src="img/project.jpg">
+                            </div>
+    
+                            <!--project name-->
+                            <div>
+                                <p class="text-sm font-semibold mb-2 mt-2">project name</p>
+                                <p class="text-xs font-semibold text-gray-600">نوع المشروع</p>
+                                <p class="text-xs font-semibold text-gray-600 mt-2 mb-2">التقدم</p>
+                            </div>
+    
+                            <!---->
+                            <div class="w-full h-1.5 rounded-full bg-[#BAC8FF] flex items-center">
+                                <div class="px-2 bg-[#6C22A6] h-1.5 rounded-tl-full rounded-bl-full w-20"></div>
+                                <div class="w-4 h-4 rounded-full bg-[#6C22A6] border-2 border-white"></div>
+                            </div>
+    
+                             <!--team members profiles-->
+                            <div dir="rtl" class="flex justify-between items-center mt-4">
+                                <!--profile images-->
+                                <div class="mt-7 flex relative w-full h-full">
+                                    <img class="border-2 border-white h-7 rounded-full absolute bottom-0" src="img/profile.png">
+                                    <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-4" src="img/profile.png">
+                                    <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-8" src="img/profile.png">
+                                    <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-12" src="img/profile.png">
+                                </div>
+                                <div class="flex gap-2 w-full justify-end items-center text-sm">
+                                    <p>1 Hour</p>
+                                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.25 10.0005C19.25 15.1095 15.109 19.2505 10 19.2505C4.891 19.2505 0.75 15.1095 0.75 10.0005C0.75 4.89149 4.891 0.750488 10 0.750488C15.109 0.750488 19.25 4.89149 19.25 10.0005Z" stroke="#54577A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M13.4311 12.9427L9.66113 10.6937V5.84668" stroke="#54577A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>                                    
+                                </div>
+                            </div>
+    
+                            <!--veiw details button-->
+                            <button class="text-sm bg-[#368888] hover:bg-[#338181] rounded-full py-1 px-2 flex items-center gap-2 text-white shadow mt-3 overflow-visible transition-all hover:scale-105 shadow">
+                                <p>Veiw Details</p>
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.2244 6.7244H9.31594L5.78087 10.2595C5.49835 10.542 5.49835 11.0056 5.78087 11.2881C6.06338 11.5706 6.51976 11.5706 6.80227 11.2881L11.5761 6.51432C11.8586 6.23181 11.8586 5.77544 11.5761 5.49292L6.80952 0.711887C6.527 0.429371 6.07063 0.429371 5.78811 0.711887C5.5056 0.994402 5.5056 1.45077 5.78811 1.73329L9.31594 5.2756H1.2244C0.82598 5.2756 0.5 5.60158 0.5 6C0.5 6.39842 0.82598 6.7244 1.2244 6.7244Z" fill="white"/>
+                                </svg>                                
+                            </button>
+                            </div>
+    
+                        </div>
+                    </div>
+
+                    <!--team 4 card-->
+                    <div class="flex-shrink-0">
+                    <div class="h-72 w-72">
+                        <div class="bg-white rounded-md p-3 shadow-sm overflow-visible h-64">
+
+                        <!--project image-->
+                        <div class="flex justify-between">
+                            <img class="h-20 rounded-md w-full object-cover" src="img/project.jpg">
+                        </div>
+
+                        <!--project name-->
+                        <div>
+                            <p class="text-sm font-semibold mb-2 mt-2">project name</p>
+                            <p class="text-xs font-semibold text-gray-600">نوع المشروع</p>
+                            <p class="text-xs font-semibold text-gray-600 mt-2 mb-2">التقدم</p>
+                        </div>
+
+                        <!---->
+                        <div class="w-full h-1.5 rounded-full bg-[#BAC8FF] flex items-center">
+                            <div class="px-2 bg-[#6C22A6] h-1.5 rounded-tl-full rounded-bl-full w-20"></div>
+                            <div class="w-4 h-4 rounded-full bg-[#6C22A6] border-2 border-white"></div>
+                        </div>
+
+                         <!--team members profiles-->
+                        <div dir="rtl" class="flex justify-between items-center mt-4">
+                            <!--profile images-->
+                            <div class="mt-7 flex relative w-full h-full">
+                                <img class="border-2 border-white h-7 rounded-full absolute bottom-0" src="img/profile.png">
+                                <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-4" src="img/profile.png">
+                                <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-8" src="img/profile.png">
+                                <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-12" src="img/profile.png">
+                            </div>
+                            <div class="flex gap-2 w-full justify-end items-center text-sm">
+                                <p>1 Hour</p>
+                                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.25 10.0005C19.25 15.1095 15.109 19.2505 10 19.2505C4.891 19.2505 0.75 15.1095 0.75 10.0005C0.75 4.89149 4.891 0.750488 10 0.750488C15.109 0.750488 19.25 4.89149 19.25 10.0005Z" stroke="#54577A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M13.4311 12.9427L9.66113 10.6937V5.84668" stroke="#54577A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                    
+                            </div>
+                        </div>
+
+                        <!--veiw details button-->
+                        <button class="text-sm bg-[#368888] hover:bg-[#338181] rounded-full py-1 px-2 flex items-center gap-2 text-white shadow mt-3 overflow-visible transition-all hover:scale-105 shadow">
+                            <p>Veiw Details</p>
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.2244 6.7244H9.31594L5.78087 10.2595C5.49835 10.542 5.49835 11.0056 5.78087 11.2881C6.06338 11.5706 6.51976 11.5706 6.80227 11.2881L11.5761 6.51432C11.8586 6.23181 11.8586 5.77544 11.5761 5.49292L6.80952 0.711887C6.527 0.429371 6.07063 0.429371 5.78811 0.711887C5.5056 0.994402 5.5056 1.45077 5.78811 1.73329L9.31594 5.2756H1.2244C0.82598 5.2756 0.5 5.60158 0.5 6C0.5 6.39842 0.82598 6.7244 1.2244 6.7244Z" fill="white"/>
+                            </svg>                                
+                        </button>
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
+                
+                <button id="scroll-right" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700/50 text-white p-2 rounded-l hover:bg-gray-700 transition-all">
+                  &rarr;
+                </button>
+            </div>
+
+            <!-- teams cards section 2 -->
+            <div class="relative mt-5 w-[960px] xl:w-[1160px] 2xl:w-[2000px] mb-5">
+                <button id="scroll-left" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-700/50 text-white p-2 rounded-r hover:bg-gray-700 transition-all">
+                  &larr;
+                </button>
+                
+                <div class="flex gap-4 overflow-x-scroll no-scrollbar px-3" id="scroll-container">
+
+                    <!--team 1 card-->
+                    <div class="flex-shrink-0">
+                    <div class="h-72 w-72">
+                        <div class="bg-white rounded-md p-3 shadow-sm overflow-visible h-64">
+
+                        <!--project image-->
+                        <div class="flex justify-between">
+                            <img class="h-20 rounded-md w-full object-cover" src="img/project.jpg">
+                        </div>
+
+                        <!--project name-->
+                        <div>
+                            <p class="text-sm font-semibold mb-2 mt-2">project name</p>
+                            <p class="text-xs font-semibold text-gray-600">نوع المشروع</p>
+                            <p class="text-xs font-semibold text-gray-600 mt-2 mb-2">التقدم</p>
+                        </div>
+
+                        <!---->
+                        <div class="w-full h-1.5 rounded-full bg-[#BAC8FF] flex items-center">
+                            <div class="px-2 bg-[#6C22A6] h-1.5 rounded-tl-full rounded-bl-full w-20"></div>
+                            <div class="w-4 h-4 rounded-full bg-[#6C22A6] border-2 border-white"></div>
+                        </div>
+
+                         <!--team members profiles-->
+                        <div dir="rtl" class="flex justify-between items-center mt-4">
+                            <!--profile images-->
+                            <div class="mt-7 flex relative w-full h-full">
+                                <img class="border-2 border-white h-7 rounded-full absolute bottom-0" src="img/profile.png">
+                                <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-4" src="img/profile.png">
+                                <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-8" src="img/profile.png">
+                                <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-12" src="img/profile.png">
+                            </div>
+                            <div class="flex gap-2 w-full justify-end items-center text-sm">
+                                <p>1 Hour</p>
+                                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.25 10.0005C19.25 15.1095 15.109 19.2505 10 19.2505C4.891 19.2505 0.75 15.1095 0.75 10.0005C0.75 4.89149 4.891 0.750488 10 0.750488C15.109 0.750488 19.25 4.89149 19.25 10.0005Z" stroke="#54577A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M13.4311 12.9427L9.66113 10.6937V5.84668" stroke="#54577A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                    
+                            </div>
+                        </div>
+
+                        <!--veiw details button-->
+                        <button class="text-sm bg-[#368888] hover:bg-[#338181] rounded-full py-1 px-2 flex items-center gap-2 text-white shadow mt-3 overflow-visible transition-all hover:scale-105 shadow">
+                            <p>Veiw Details</p>
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.2244 6.7244H9.31594L5.78087 10.2595C5.49835 10.542 5.49835 11.0056 5.78087 11.2881C6.06338 11.5706 6.51976 11.5706 6.80227 11.2881L11.5761 6.51432C11.8586 6.23181 11.8586 5.77544 11.5761 5.49292L6.80952 0.711887C6.527 0.429371 6.07063 0.429371 5.78811 0.711887C5.5056 0.994402 5.5056 1.45077 5.78811 1.73329L9.31594 5.2756H1.2244C0.82598 5.2756 0.5 5.60158 0.5 6C0.5 6.39842 0.82598 6.7244 1.2244 6.7244Z" fill="white"/>
+                            </svg>                                
+                        </button>
+                        </div>
+
+                    </div>
+                    </div>
+
+                    <!--team 2 card-->
+                    <div class="flex-shrink-0">
+                        <div class="h-72 w-72">
+                            <div class="bg-white rounded-md p-3 shadow-sm overflow-visible h-64">
+    
+                            <!--project image-->
+                            <div class="flex justify-between">
+                                <img class="h-20 rounded-md w-full object-cover" src="img/project.jpg">
+                            </div>
+    
+                            <!--project name-->
+                            <div>
+                                <p class="text-sm font-semibold mb-2 mt-2">project name</p>
+                                <p class="text-xs font-semibold text-gray-600">نوع المشروع</p>
+                                <p class="text-xs font-semibold text-gray-600 mt-2 mb-2">التقدم</p>
+                            </div>
+    
+                            <!---->
+                            <div class="w-full h-1.5 rounded-full bg-[#BAC8FF] flex items-center">
+                                <div class="px-2 bg-[#6C22A6] h-1.5 rounded-tl-full rounded-bl-full w-20"></div>
+                                <div class="w-4 h-4 rounded-full bg-[#6C22A6] border-2 border-white"></div>
+                            </div>
+    
+                             <!--team members profiles-->
+                            <div dir="rtl" class="flex justify-between items-center mt-4">
+                                <!--profile images-->
+                                <div class="mt-7 flex relative w-full h-full">
+                                    <img class="border-2 border-white h-7 rounded-full absolute bottom-0" src="img/profile.png">
+                                    <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-4" src="img/profile.png">
+                                    <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-8" src="img/profile.png">
+                                    <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-12" src="img/profile.png">
+                                </div>
+                                <div class="flex gap-2 w-full justify-end items-center text-sm">
+                                    <p>1 Hour</p>
+                                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.25 10.0005C19.25 15.1095 15.109 19.2505 10 19.2505C4.891 19.2505 0.75 15.1095 0.75 10.0005C0.75 4.89149 4.891 0.750488 10 0.750488C15.109 0.750488 19.25 4.89149 19.25 10.0005Z" stroke="#54577A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M13.4311 12.9427L9.66113 10.6937V5.84668" stroke="#54577A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>                                    
+                                </div>
+                            </div>
+    
+                            <!--veiw details button-->
+                            <button class="text-sm bg-[#368888] hover:bg-[#338181] rounded-full py-1 px-2 flex items-center gap-2 text-white shadow mt-3 overflow-visible transition-all hover:scale-105 shadow">
+                                <p>Veiw Details</p>
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.2244 6.7244H9.31594L5.78087 10.2595C5.49835 10.542 5.49835 11.0056 5.78087 11.2881C6.06338 11.5706 6.51976 11.5706 6.80227 11.2881L11.5761 6.51432C11.8586 6.23181 11.8586 5.77544 11.5761 5.49292L6.80952 0.711887C6.527 0.429371 6.07063 0.429371 5.78811 0.711887C5.5056 0.994402 5.5056 1.45077 5.78811 1.73329L9.31594 5.2756H1.2244C0.82598 5.2756 0.5 5.60158 0.5 6C0.5 6.39842 0.82598 6.7244 1.2244 6.7244Z" fill="white"/>
+                                </svg>                                
+                            </button>
+                            </div>
+    
+                        </div>
+                    </div>
+
+                    <!--team 3 card-->
+                    <div class="flex-shrink-0">
+                        <div class="h-72 w-72">
+                            <div class="bg-white rounded-md p-3 shadow-sm overflow-visible h-64">
+    
+                            <!--project image-->
+                            <div class="flex justify-between">
+                                <img class="h-20 rounded-md w-full object-cover" src="img/project.jpg">
+                            </div>
+    
+                            <!--project name-->
+                            <div>
+                                <p class="text-sm font-semibold mb-2 mt-2">project name</p>
+                                <p class="text-xs font-semibold text-gray-600">نوع المشروع</p>
+                                <p class="text-xs font-semibold text-gray-600 mt-2 mb-2">التقدم</p>
+                            </div>
+    
+                            <!---->
+                            <div class="w-full h-1.5 rounded-full bg-[#BAC8FF] flex items-center">
+                                <div class="px-2 bg-[#6C22A6] h-1.5 rounded-tl-full rounded-bl-full w-20"></div>
+                                <div class="w-4 h-4 rounded-full bg-[#6C22A6] border-2 border-white"></div>
+                            </div>
+    
+                             <!--team members profiles-->
+                            <div dir="rtl" class="flex justify-between items-center mt-4">
+                                <!--profile images-->
+                                <div class="mt-7 flex relative w-full h-full">
+                                    <img class="border-2 border-white h-7 rounded-full absolute bottom-0" src="img/profile.png">
+                                    <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-4" src="img/profile.png">
+                                    <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-8" src="img/profile.png">
+                                    <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-12" src="img/profile.png">
+                                </div>
+                                <div class="flex gap-2 w-full justify-end items-center text-sm">
+                                    <p>1 Hour</p>
+                                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.25 10.0005C19.25 15.1095 15.109 19.2505 10 19.2505C4.891 19.2505 0.75 15.1095 0.75 10.0005C0.75 4.89149 4.891 0.750488 10 0.750488C15.109 0.750488 19.25 4.89149 19.25 10.0005Z" stroke="#54577A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M13.4311 12.9427L9.66113 10.6937V5.84668" stroke="#54577A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>                                    
+                                </div>
+                            </div>
+    
+                            <!--veiw details button-->
+                            <button class="text-sm bg-[#368888] hover:bg-[#338181] rounded-full py-1 px-2 flex items-center gap-2 text-white shadow mt-3 overflow-visible transition-all hover:scale-105 shadow">
+                                <p>Veiw Details</p>
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1.2244 6.7244H9.31594L5.78087 10.2595C5.49835 10.542 5.49835 11.0056 5.78087 11.2881C6.06338 11.5706 6.51976 11.5706 6.80227 11.2881L11.5761 6.51432C11.8586 6.23181 11.8586 5.77544 11.5761 5.49292L6.80952 0.711887C6.527 0.429371 6.07063 0.429371 5.78811 0.711887C5.5056 0.994402 5.5056 1.45077 5.78811 1.73329L9.31594 5.2756H1.2244C0.82598 5.2756 0.5 5.60158 0.5 6C0.5 6.39842 0.82598 6.7244 1.2244 6.7244Z" fill="white"/>
+                                </svg>                                
+                            </button>
+                            </div>
+    
+                        </div>
+                    </div>
+
+                    <!--team 4 card-->
+                    <div class="flex-shrink-0">
+                    <div class="h-72 w-72">
+                        <div class="bg-white rounded-md p-3 shadow-sm overflow-visible h-64">
+
+                        <!--project image-->
+                        <div class="flex justify-between">
+                            <img class="h-20 rounded-md w-full object-cover" src="img/project.jpg">
+                        </div>
+
+                        <!--project name-->
+                        <div>
+                            <p class="text-sm font-semibold mb-2 mt-2">project name</p>
+                            <p class="text-xs font-semibold text-gray-600">نوع المشروع</p>
+                            <p class="text-xs font-semibold text-gray-600 mt-2 mb-2">التقدم</p>
+                        </div>
+
+                        <!---->
+                        <div class="w-full h-1.5 rounded-full bg-[#BAC8FF] flex items-center">
+                            <div class="px-2 bg-[#6C22A6] h-1.5 rounded-tl-full rounded-bl-full w-20"></div>
+                            <div class="w-4 h-4 rounded-full bg-[#6C22A6] border-2 border-white"></div>
+                        </div>
+
+                         <!--team members profiles-->
+                        <div dir="rtl" class="flex justify-between items-center mt-4">
+                            <!--profile images-->
+                            <div class="mt-7 flex relative w-full h-full">
+                                <img class="border-2 border-white h-7 rounded-full absolute bottom-0" src="img/profile.png">
+                                <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-4" src="img/profile.png">
+                                <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-8" src="img/profile.png">
+                                <img class="border-2 border-white h-7 rounded-full absolute bottom-0 mr-12" src="img/profile.png">
+                            </div>
+                            <div class="flex gap-2 w-full justify-end items-center text-sm">
+                                <p>1 Hour</p>
+                                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M19.25 10.0005C19.25 15.1095 15.109 19.2505 10 19.2505C4.891 19.2505 0.75 15.1095 0.75 10.0005C0.75 4.89149 4.891 0.750488 10 0.750488C15.109 0.750488 19.25 4.89149 19.25 10.0005Z" stroke="#54577A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M13.4311 12.9427L9.66113 10.6937V5.84668" stroke="#54577A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                    
+                            </div>
+                        </div>
+
+                        <!--veiw details button-->
+                        <button class="text-sm bg-[#368888] hover:bg-[#338181] rounded-full py-1 px-2 flex items-center gap-2 text-white shadow mt-3 overflow-visible transition-all hover:scale-105 shadow">
+                            <p>Veiw Details</p>
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.2244 6.7244H9.31594L5.78087 10.2595C5.49835 10.542 5.49835 11.0056 5.78087 11.2881C6.06338 11.5706 6.51976 11.5706 6.80227 11.2881L11.5761 6.51432C11.8586 6.23181 11.8586 5.77544 11.5761 5.49292L6.80952 0.711887C6.527 0.429371 6.07063 0.429371 5.78811 0.711887C5.5056 0.994402 5.5056 1.45077 5.78811 1.73329L9.31594 5.2756H1.2244C0.82598 5.2756 0.5 5.60158 0.5 6C0.5 6.39842 0.82598 6.7244 1.2244 6.7244Z" fill="white"/>
+                            </svg>                                
+                        </button>
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
+                
+                <button id="scroll-right" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-700/50 text-white p-2 rounded-l hover:bg-gray-700 transition-all">
+                  &rarr;
+                </button>
+            </div>
+
+            <script>
+                document.getElementById('scroll-left').addEventListener('click', () => {
+                  document.getElementById('scroll-container').scrollBy({
+                    left: -100, // Adjust the value as needed
+                    behavior: 'smooth'
+                  });
+                });
+              
+                document.getElementById('scroll-right').addEventListener('click', () => {
+                  document.getElementById('scroll-container').scrollBy({
+                    left: 100, // Adjust the value as needed
+                    behavior: 'smooth'
+                  });
+                });
+            </script>
+
+        </section>
+    </div>
+
+    <!--add team modal-->
+    <div id="modal-wrapper" class="fixed z-50 inset-0 hidden">
+        <div class="flex items-center justify-center min-h-screen min-w-screen bg-gray-200 bg-opacity-50 transition-all">
+            <!--modal box-->
+            <div class="bg-white rounded-xl w-[700px]">
+
+                <!--X button-->
+                <div class="border-b-2 border-gray-400">
+                    <button id="close-modal" class="m-2">
+                        <svg width="25" height="25" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 28.4375C7.5875 28.4375 1.5625 22.4125 1.5625 15C1.5625 7.5875 7.5875 1.5625 15 1.5625C22.4125 1.5625 28.4375 7.5875 28.4375 15C28.4375 22.4125 22.4125 28.4375 15 28.4375ZM15 3.4375C8.625 3.4375 3.4375 8.625 3.4375 15C3.4375 21.375 8.625 26.5625 15 26.5625C21.375 26.5625 26.5625 21.375 26.5625 15C26.5625 8.625 21.375 3.4375 15 3.4375Z" fill="#292D32"/>
+                            <path d="M11.4627 19.4752C11.2252 19.4752 10.9877 19.3877 10.8002 19.2002C10.4377 18.8377 10.4377 18.2377 10.8002 17.8752L17.8752 10.8002C18.2377 10.4377 18.8377 10.4377 19.2002 10.8002C19.5627 11.1627 19.5627 11.7627 19.2002 12.1252L12.1252 19.2002C11.9502 19.3877 11.7002 19.4752 11.4627 19.4752Z" fill="#292D32"/>
+                            <path d="M18.5377 19.4752C18.3002 19.4752 18.0627 19.3877 17.8752 19.2002L10.8002 12.1252C10.4377 11.7627 10.4377 11.1627 10.8002 10.8002C11.1627 10.4377 11.7627 10.4377 12.1252 10.8002L19.2002 17.8752C19.5627 18.2377 19.5627 18.8377 19.2002 19.2002C19.0127 19.3877 18.7752 19.4752 18.5377 19.4752Z" fill="#292D32"/>
+                        </svg>   
+                    </button>
+                </div>
+
+                <!--modal content page 1-->
+                <div class="flex flex-col justify-start h-[480px] mt-3 mx-5 rounded-xl text-sm font-semibold">
+
+                    <!--Title input-->
+                    <div class="w-full">
+                        <p>Title</p>
+                        <input type="text" class="rounded-lg border-2 border-gray-200 p-1 outline-none w-full">
+                    </div>
+
+                    <!--select team and type and input Date-->
+                    <div class="flex gap-6 mt-2 justify-center">
+                        <!--team select-->
+                        <div class="mt-1.5">
+                            <div class="my-3">
+
+                                <!--team select-->
+                                <div>
+                                    <div class="relative inline-block text-left">
+                                        <div>
+                                            <button type="button" class="inline-flex justify-center rounded-full border border-gray-300 shadow-md px-4 py-2 bg-white text-gray-700 hover:bg-gray-50 transition-all focus:outline-none text-xs" id="menu-button1" aria-expanded="true" aria-haspopup="true">
+                                                الفريق
+                                                <!-- Heroicon name: chevron-down -->
+                                                <svg class="ml-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                
+                                        <!-- Dropdown menu, hidden by default -->
+                                        <div class="origin-top-right absolute right-0 min-w-max rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden mt-2" id="dropdown-menu1" role="menu" aria-orientation="vertical" aria-labelledby="menu-button1" tabindex="-1">
+                                            <div class="" role="none">
+                                                <button class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 w-full transition-all rounded-t-lg" role="menuitem" tabindex="-1" id="menu-item-0">team 1</button>
+                                                <button class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 w-full transition-all" role="menuitem" tabindex="-1" id="menu-item-1">team 2</button>
+                                                <button class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 w-full transition-all rounded-b-lg" role="menuitem" tabindex="-1" id="menu-item-2">team 3</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <script>
+                                    const menuButton1 = document.getElementById('menu-button1');
+                                    const dropdown1 = document.getElementById('dropdown-menu1');
+                                
+                                    // Toggle dropdown visibility on button click
+                                    menuButton1.addEventListener('click', (e) => {
+                                        dropdown1.classList.toggle('hidden');
+                                        e.stopPropagation(); // Prevent click event from propagating to document
+                                    });
+                                
+                                    // Close dropdown if clicked outside
+                                    document.addEventListener('click', (e) => {
+                                        if (!menuButton1.contains(e.target) && !dropdown1.contains(e.target)) {
+                                            dropdown1.classList.add('hidden');
+                                        }
+                                    });
+                                </script>
+                            </div>
+                            
+                            <script>
+                                // Simple dropdown toggle functionality
+                                const menuButton1 = document.getElementById('menu-button1');
+                                const dropdown1 = menuButton1.nextElementSibling;
+                            
+                                menuButton1.addEventListener('click', () => {
+                                    dropdown1.classList.toggle('hidden');
+                                });
+                            
+                                // Close dropdown if clicked outside
+                                document.addEventListener('click', (e) => {
+                                    if (!menuButton1.contains(e.target) && !dropdown1.contains(e.target)) {
+                                        dropdown1.classList.add('hidden');
+                                    }
+                                });
+                            </script>
+                        </div>
+
+                        <!--type select-->
+                        <div class="mt-1.5">
+                            <div class="my-3">
+
+                                <!--team select-->
+                                <div>
+                                    <div class="relative inline-block text-left">
+                                        <div>
+                                            <button type="button" class="inline-flex justify-center rounded-full border border-gray-300 shadow-md px-4 py-2 bg-white text-gray-700 hover:bg-gray-50 transition-all focus:outline-none text-xs" id="menu-button2" aria-expanded="true" aria-haspopup="true">
+                                                النوع
+                                                <!-- Heroicon name: chevron-down -->
+                                                <svg class="ml-2 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                
+                                        <!-- Dropdown menu, hidden by default -->
+                                        <div class="origin-top-right absolute right-0 min-w-max rounded-lg shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden mt-2" id="dropdown-menu2" role="menu" aria-orientation="vertical" aria-labelledby="menu-button2" tabindex="-1">
+                                            <div class="" role="none">
+                                                <button class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 w-full transition-all rounded-t-lg" role="menuitem" tabindex="-1" id="menu-item-0">team 1</button>
+                                                <button class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 w-full transition-all" role="menuitem" tabindex="-1" id="menu-item-1">team 2</button>
+                                                <button class="text-gray-700 block px-4 py-2 text-sm hover:bg-gray-100 w-full transition-all rounded-b-lg" role="menuitem" tabindex="-1" id="menu-item-2">team 3</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <script>
+                                    const menuButton2 = document.getElementById('menu-button2');
+                                    const dropdown2 = document.getElementById('dropdown-menu2');
+                                
+                                    // Toggle dropdown visibility on button click
+                                    menuButton2.addEventListener('click', (e) => {
+                                        dropdown2.classList.toggle('hidden');
+                                        e.stopPropagation(); // Prevent click event from propagating to document
+                                    });
+                                
+                                    // Close dropdown if clicked outside
+                                    document.addEventListener('click', (e) => {
+                                        if (!menuButton2.contains(e.target) && !dropdown2.contains(e.target)) {
+                                            dropdown2.classList.add('hidden');
+                                        }
+                                    });
+                                </script>
+                            </div>
+                            
+                            <script>
+                                // Simple dropdown toggle functionality
+                                const menuButton1 = document.getElementById('menu-button1');
+                                const dropdown1 = menuButton1.nextElementSibling;
+                            
+                                menuButton1.addEventListener('click', () => {
+                                    dropdown1.classList.toggle('hidden');
+                                });
+                            
+                                // Close dropdown if clicked outside
+                                document.addEventListener('click', (e) => {
+                                    if (!menuButton1.contains(e.target) && !dropdown1.contains(e.target)) {
+                                        dropdown1.classList.add('hidden');
+                                    }
+                                });
+                            </script>
+                        </div>
+
+                        <!--Date input-->
+                        <div class="w-full">
+                            <p>Date</p>
+                            <input type="text" class="rounded-lg border-2 border-gray-200 p-1 outline-none w-full">
+                        </div>
+                    </div>
+
+                    <!--Description and image-->
+                    <div class="grid grid-cols-5 gap-4">
+
+                        <!--write Description-->
+                        <div class="col-span-3 w-full h-full">
+                            <p class="pb-1.5">Task Description</p>
+                            <div class="border-2 border-gray-200 rounded-lg h-ful">
+                                <textarea class="w-full h-full rounded-lg resize-none px-1" rows="6"></textarea>
+                            </div>
+                        </div>
+
+                        <!--upload image-->
+                        <div class="w-full col-span-2">
+                            <p class="mb-1.5">Upload Image</p>
+                            <form class="border-2 border-gray-200 p-7 pb-8 rounded-lg">
+                                <div class="">
+                                    <input type="file" accept="image/*" id="image-upload" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 outline-none file:cursor-pointer file:bg-[#6C22A6]/30 hover:file:bg-[#6C22A6]/50 file:transition-all file:text-white file:py-2 file:px-4 file:rounded-lg file:border-none">
+                                    <p class="mt-1.5 text-xs text-gray-500" id="file_input_help">PNG, JPG, or GIF (max. 2MB).</p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!--file upload and requairments-->
+                    <div class="mt-1 grid grid-cols-5 gap-4">
+
+                        <!--file upload -->
+                        <div class="w-full col-span-2">
+                            <p class="mb-1.5">File Submissions</p>
+                            <form class="border-2 border-gray-200 p-7 pb-8 rounded-lg">
+                                <div class="">
+                                    <input type="file" id="file-upload" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 outline-none file:cursor-pointer file:bg-[#6C22A6]/30 hover:file:bg-[#6C22A6]/50 file:transition-all file:text-white file:py-2 file:px-4 file:rounded-lg file:border-none">
+                                    <p class="mt-1.5 text-xs text-gray-500" id="file_input_help">PDF, DOC, PNG, JPG (Max 5MB).</p>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="w-full col-span-3">
+                            <p class="mb-1.5">المتطلبات</p>
+                            <form class="rounded-lg w-full">
+                                <input type="text" class="border-2 border-gray-200 rounded-lg w-full px-1 px-3 outline-none" placeholder="Add requairments ...">
+
+                                <!--list-->
+                                <div class="border-2 border-gray-200 rounded-lg mt-1 h-[96px] p-1 overflow-y-scroll">
+                                    <ul>
+                                        <li class="flex justify-between hover:bg-gray-100 rounded-lg px-3">
+                                            <p>- Design</p>
+                                            <button class="cursor-pointer">
+                                                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5139 5H2.48542C1.98703 5 1.58301 5.37295 1.58301 5.833V12.5C1.58301 13.8807 2.79557 15 4.29134 15H9.70801C10.4263 15 11.1152 14.7366 11.6231 14.2678C12.131 13.7989 12.4163 13.163 12.4163 12.5V5.833C12.4163 5.37295 12.0123 5 11.5139 5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.25 3.00008L10.1352 2.78908C9.54139 1.69263 8.32742 1 6.99946 1C5.67149 1 4.45752 1.69263 3.86375 2.78908L3.75 3.00008H10.25Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M5.94376 8.333C5.94376 7.91879 5.60797 7.583 5.19376 7.583C4.77954 7.583 4.44376 7.91879 4.44376 8.333H5.94376ZM4.44376 11.666C4.44376 12.0802 4.77954 12.416 5.19376 12.416C5.60797 12.416 5.94376 12.0802 5.94376 11.666H4.44376ZM9.55559 8.333C9.55559 7.91879 9.2198 7.583 8.80559 7.583C8.39138 7.583 8.05559 7.91879 8.05559 8.333H9.55559ZM8.05559 11.666C8.05559 12.0802 8.39138 12.416 8.80559 12.416C9.2198 12.416 9.55559 12.0802 9.55559 11.666H8.05559ZM10.2497 2.25C9.83546 2.25 9.49967 2.58579 9.49967 3C9.49967 3.41421 9.83546 3.75 10.2497 3.75V2.25ZM12.4163 3.75C12.8306 3.75 13.1663 3.41421 13.1663 3C13.1663 2.58579 12.8306 2.25 12.4163 2.25V3.75ZM3.74967 3.75C4.16389 3.75 4.49967 3.41421 4.49967 3C4.49967 2.58579 4.16389 2.25 3.74967 2.25V3.75ZM1.58301 2.25C1.16879 2.25 0.833008 2.58579 0.833008 3C0.833008 3.41421 1.16879 3.75 1.58301 3.75V2.25ZM4.44376 8.333V11.666H5.94376V8.333H4.44376ZM8.05559 8.333V11.666H9.55559V8.333H8.05559ZM10.2497 3.75H12.4163V2.25H10.2497V3.75ZM3.74967 2.25H1.58301V3.75H3.74967V2.25Z" fill="black"/>
+                                                </svg>  
+                                            </button>
+                                        </li>
+                                        <li class="flex justify-between hover:bg-gray-100 rounded-lg px-3">
+                                            <p>- Design</p>
+                                            <button class="cursor-pointer">
+                                                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5139 5H2.48542C1.98703 5 1.58301 5.37295 1.58301 5.833V12.5C1.58301 13.8807 2.79557 15 4.29134 15H9.70801C10.4263 15 11.1152 14.7366 11.6231 14.2678C12.131 13.7989 12.4163 13.163 12.4163 12.5V5.833C12.4163 5.37295 12.0123 5 11.5139 5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.25 3.00008L10.1352 2.78908C9.54139 1.69263 8.32742 1 6.99946 1C5.67149 1 4.45752 1.69263 3.86375 2.78908L3.75 3.00008H10.25Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M5.94376 8.333C5.94376 7.91879 5.60797 7.583 5.19376 7.583C4.77954 7.583 4.44376 7.91879 4.44376 8.333H5.94376ZM4.44376 11.666C4.44376 12.0802 4.77954 12.416 5.19376 12.416C5.60797 12.416 5.94376 12.0802 5.94376 11.666H4.44376ZM9.55559 8.333C9.55559 7.91879 9.2198 7.583 8.80559 7.583C8.39138 7.583 8.05559 7.91879 8.05559 8.333H9.55559ZM8.05559 11.666C8.05559 12.0802 8.39138 12.416 8.80559 12.416C9.2198 12.416 9.55559 12.0802 9.55559 11.666H8.05559ZM10.2497 2.25C9.83546 2.25 9.49967 2.58579 9.49967 3C9.49967 3.41421 9.83546 3.75 10.2497 3.75V2.25ZM12.4163 3.75C12.8306 3.75 13.1663 3.41421 13.1663 3C13.1663 2.58579 12.8306 2.25 12.4163 2.25V3.75ZM3.74967 3.75C4.16389 3.75 4.49967 3.41421 4.49967 3C4.49967 2.58579 4.16389 2.25 3.74967 2.25V3.75ZM1.58301 2.25C1.16879 2.25 0.833008 2.58579 0.833008 3C0.833008 3.41421 1.16879 3.75 1.58301 3.75V2.25ZM4.44376 8.333V11.666H5.94376V8.333H4.44376ZM8.05559 8.333V11.666H9.55559V8.333H8.05559ZM10.2497 3.75H12.4163V2.25H10.2497V3.75ZM3.74967 2.25H1.58301V3.75H3.74967V2.25Z" fill="black"/>
+                                                </svg>  
+                                            </button>
+                                        </li>
+                                        <li class="flex justify-between hover:bg-gray-100 rounded-lg px-3">
+                                            <p>- Design</p>
+                                            <button class="cursor-pointer">
+                                                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5139 5H2.48542C1.98703 5 1.58301 5.37295 1.58301 5.833V12.5C1.58301 13.8807 2.79557 15 4.29134 15H9.70801C10.4263 15 11.1152 14.7366 11.6231 14.2678C12.131 13.7989 12.4163 13.163 12.4163 12.5V5.833C12.4163 5.37295 12.0123 5 11.5139 5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.25 3.00008L10.1352 2.78908C9.54139 1.69263 8.32742 1 6.99946 1C5.67149 1 4.45752 1.69263 3.86375 2.78908L3.75 3.00008H10.25Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M5.94376 8.333C5.94376 7.91879 5.60797 7.583 5.19376 7.583C4.77954 7.583 4.44376 7.91879 4.44376 8.333H5.94376ZM4.44376 11.666C4.44376 12.0802 4.77954 12.416 5.19376 12.416C5.60797 12.416 5.94376 12.0802 5.94376 11.666H4.44376ZM9.55559 8.333C9.55559 7.91879 9.2198 7.583 8.80559 7.583C8.39138 7.583 8.05559 7.91879 8.05559 8.333H9.55559ZM8.05559 11.666C8.05559 12.0802 8.39138 12.416 8.80559 12.416C9.2198 12.416 9.55559 12.0802 9.55559 11.666H8.05559ZM10.2497 2.25C9.83546 2.25 9.49967 2.58579 9.49967 3C9.49967 3.41421 9.83546 3.75 10.2497 3.75V2.25ZM12.4163 3.75C12.8306 3.75 13.1663 3.41421 13.1663 3C13.1663 2.58579 12.8306 2.25 12.4163 2.25V3.75ZM3.74967 3.75C4.16389 3.75 4.49967 3.41421 4.49967 3C4.49967 2.58579 4.16389 2.25 3.74967 2.25V3.75ZM1.58301 2.25C1.16879 2.25 0.833008 2.58579 0.833008 3C0.833008 3.41421 1.16879 3.75 1.58301 3.75V2.25ZM4.44376 8.333V11.666H5.94376V8.333H4.44376ZM8.05559 8.333V11.666H9.55559V8.333H8.05559ZM10.2497 3.75H12.4163V2.25H10.2497V3.75ZM3.74967 2.25H1.58301V3.75H3.74967V2.25Z" fill="black"/>
+                                                </svg>  
+                                            </button>
+                                        </li>
+                                        <li class="flex justify-between hover:bg-gray-100 rounded-lg px-3">
+                                            <p>- Design</p>
+                                            <button class="cursor-pointer">
+                                                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5139 5H2.48542C1.98703 5 1.58301 5.37295 1.58301 5.833V12.5C1.58301 13.8807 2.79557 15 4.29134 15H9.70801C10.4263 15 11.1152 14.7366 11.6231 14.2678C12.131 13.7989 12.4163 13.163 12.4163 12.5V5.833C12.4163 5.37295 12.0123 5 11.5139 5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.25 3.00008L10.1352 2.78908C9.54139 1.69263 8.32742 1 6.99946 1C5.67149 1 4.45752 1.69263 3.86375 2.78908L3.75 3.00008H10.25Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M5.94376 8.333C5.94376 7.91879 5.60797 7.583 5.19376 7.583C4.77954 7.583 4.44376 7.91879 4.44376 8.333H5.94376ZM4.44376 11.666C4.44376 12.0802 4.77954 12.416 5.19376 12.416C5.60797 12.416 5.94376 12.0802 5.94376 11.666H4.44376ZM9.55559 8.333C9.55559 7.91879 9.2198 7.583 8.80559 7.583C8.39138 7.583 8.05559 7.91879 8.05559 8.333H9.55559ZM8.05559 11.666C8.05559 12.0802 8.39138 12.416 8.80559 12.416C9.2198 12.416 9.55559 12.0802 9.55559 11.666H8.05559ZM10.2497 2.25C9.83546 2.25 9.49967 2.58579 9.49967 3C9.49967 3.41421 9.83546 3.75 10.2497 3.75V2.25ZM12.4163 3.75C12.8306 3.75 13.1663 3.41421 13.1663 3C13.1663 2.58579 12.8306 2.25 12.4163 2.25V3.75ZM3.74967 3.75C4.16389 3.75 4.49967 3.41421 4.49967 3C4.49967 2.58579 4.16389 2.25 3.74967 2.25V3.75ZM1.58301 2.25C1.16879 2.25 0.833008 2.58579 0.833008 3C0.833008 3.41421 1.16879 3.75 1.58301 3.75V2.25ZM4.44376 8.333V11.666H5.94376V8.333H4.44376ZM8.05559 8.333V11.666H9.55559V8.333H8.05559ZM10.2497 3.75H12.4163V2.25H10.2497V3.75ZM3.74967 2.25H1.58301V3.75H3.74967V2.25Z" fill="black"/>
+                                                </svg>  
+                                            </button>
+                                        </li>
+                                        <li class="flex justify-between hover:bg-gray-100 rounded-lg px-3">
+                                            <p>- Design</p>
+                                            <button class="cursor-pointer">
+                                                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5139 5H2.48542C1.98703 5 1.58301 5.37295 1.58301 5.833V12.5C1.58301 13.8807 2.79557 15 4.29134 15H9.70801C10.4263 15 11.1152 14.7366 11.6231 14.2678C12.131 13.7989 12.4163 13.163 12.4163 12.5V5.833C12.4163 5.37295 12.0123 5 11.5139 5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.25 3.00008L10.1352 2.78908C9.54139 1.69263 8.32742 1 6.99946 1C5.67149 1 4.45752 1.69263 3.86375 2.78908L3.75 3.00008H10.25Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M5.94376 8.333C5.94376 7.91879 5.60797 7.583 5.19376 7.583C4.77954 7.583 4.44376 7.91879 4.44376 8.333H5.94376ZM4.44376 11.666C4.44376 12.0802 4.77954 12.416 5.19376 12.416C5.60797 12.416 5.94376 12.0802 5.94376 11.666H4.44376ZM9.55559 8.333C9.55559 7.91879 9.2198 7.583 8.80559 7.583C8.39138 7.583 8.05559 7.91879 8.05559 8.333H9.55559ZM8.05559 11.666C8.05559 12.0802 8.39138 12.416 8.80559 12.416C9.2198 12.416 9.55559 12.0802 9.55559 11.666H8.05559ZM10.2497 2.25C9.83546 2.25 9.49967 2.58579 9.49967 3C9.49967 3.41421 9.83546 3.75 10.2497 3.75V2.25ZM12.4163 3.75C12.8306 3.75 13.1663 3.41421 13.1663 3C13.1663 2.58579 12.8306 2.25 12.4163 2.25V3.75ZM3.74967 3.75C4.16389 3.75 4.49967 3.41421 4.49967 3C4.49967 2.58579 4.16389 2.25 3.74967 2.25V3.75ZM1.58301 2.25C1.16879 2.25 0.833008 2.58579 0.833008 3C0.833008 3.41421 1.16879 3.75 1.58301 3.75V2.25ZM4.44376 8.333V11.666H5.94376V8.333H4.44376ZM8.05559 8.333V11.666H9.55559V8.333H8.05559ZM10.2497 3.75H12.4163V2.25H10.2497V3.75ZM3.74967 2.25H1.58301V3.75H3.74967V2.25Z" fill="black"/>
+                                                </svg>  
+                                            </button>
+                                        </li>
+                                        <li class="flex justify-between hover:bg-gray-100 rounded-lg px-3">
+                                            <p>- Design</p>
+                                            <button class="cursor-pointer">
+                                                <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5139 5H2.48542C1.98703 5 1.58301 5.37295 1.58301 5.833V12.5C1.58301 13.8807 2.79557 15 4.29134 15H9.70801C10.4263 15 11.1152 14.7366 11.6231 14.2678C12.131 13.7989 12.4163 13.163 12.4163 12.5V5.833C12.4163 5.37295 12.0123 5 11.5139 5Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.25 3.00008L10.1352 2.78908C9.54139 1.69263 8.32742 1 6.99946 1C5.67149 1 4.45752 1.69263 3.86375 2.78908L3.75 3.00008H10.25Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M5.94376 8.333C5.94376 7.91879 5.60797 7.583 5.19376 7.583C4.77954 7.583 4.44376 7.91879 4.44376 8.333H5.94376ZM4.44376 11.666C4.44376 12.0802 4.77954 12.416 5.19376 12.416C5.60797 12.416 5.94376 12.0802 5.94376 11.666H4.44376ZM9.55559 8.333C9.55559 7.91879 9.2198 7.583 8.80559 7.583C8.39138 7.583 8.05559 7.91879 8.05559 8.333H9.55559ZM8.05559 11.666C8.05559 12.0802 8.39138 12.416 8.80559 12.416C9.2198 12.416 9.55559 12.0802 9.55559 11.666H8.05559ZM10.2497 2.25C9.83546 2.25 9.49967 2.58579 9.49967 3C9.49967 3.41421 9.83546 3.75 10.2497 3.75V2.25ZM12.4163 3.75C12.8306 3.75 13.1663 3.41421 13.1663 3C13.1663 2.58579 12.8306 2.25 12.4163 2.25V3.75ZM3.74967 3.75C4.16389 3.75 4.49967 3.41421 4.49967 3C4.49967 2.58579 4.16389 2.25 3.74967 2.25V3.75ZM1.58301 2.25C1.16879 2.25 0.833008 2.58579 0.833008 3C0.833008 3.41421 1.16879 3.75 1.58301 3.75V2.25ZM4.44376 8.333V11.666H5.94376V8.333H4.44376ZM8.05559 8.333V11.666H9.55559V8.333H8.05559ZM10.2497 3.75H12.4163V2.25H10.2497V3.75ZM3.74967 2.25H1.58301V3.75H3.74967V2.25Z" fill="black"/>
+                                                </svg>  
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <div class="flex justify-end ">
+                        <button class="mt-3 mx-5 bg-[#368888] hover:bg-[#338181] w-fit py-1 px-3 rounded-lg transition-all text-white hover:scale-95">Done</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--for modal open and close-->
+    <script>
+        document.getElementById("open-modal").addEventListener("click", ()=>{
+            document.getElementById("modal-wrapper").classList.remove("hidden")
+        })
+
+        document.getElementById("close-modal").addEventListener("click", ()=>{
+            document.getElementById("modal-wrapper").classList.add("hidden")
+        })
+
+    </script>
+</body>
+
+</html>
