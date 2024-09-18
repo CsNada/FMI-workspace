@@ -239,9 +239,10 @@
             <div class="w-full lg:w-1/3 bg-white p-6 rounded-lg shadow-lg">
 
             <form>
+
             <!--project name-->
             <div>
-                <input value="اسم المشروع" class="text-xl font-bold text-gray-800 mb-4 p-1">
+                <input value="اسم المشروع" class="text-xl font-bold text-gray-800 mb-4 border-2 border-gray-300 rounded-lg outline-none p-1">
                 <p class="text-gray-500 text-sm mb-1 font-bold">تعيين البيانات</p>
             </div>
 
@@ -271,6 +272,14 @@
                     <label class="block text-gray-700 text-sm mb-1">مدة التنفيذ</label>
                     <input type="text" class="w-full border-2 border-gray-300 rounded-lg outline-none p-1">
                 </div>
+
+                <!--descruption input-->
+                <div>
+                    <label class="block text-gray-700 text-sm mb-1">وصف المشروع</label>
+                    <textarea class="w-full h-44 border-2 border-gray-300 rounded-lg outline-none p-1 resize-none"></textarea>
+                </div>
+
+                
             </div>
 
             <!-- Project Requirements -->
@@ -281,12 +290,12 @@
                     <h2 class="text-md font-bold text-gray-700 mb-2">متطلبات المشروع</h2>
 
                     <!--for add reqirments input-->
-                    <button>
-                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.0415 9.00038C1.0418 5.10429 3.8925 1.75095 7.85025 0.991117C11.808 0.231283 15.7705 2.27658 17.3145 5.87619C18.8585 9.4758 17.5539 13.6272 14.1986 15.7916C10.8433 17.9559 6.37178 17.5305 3.51859 14.7754C1.93238 13.2437 1.04134 11.1664 1.0415 9.00038Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M6.32812 8.25049C5.91391 8.25049 5.57812 8.58627 5.57812 9.00049C5.57812 9.4147 5.91391 9.75049 6.32812 9.75049V8.25049ZM9.5 9.75049C9.91421 9.75049 10.25 9.4147 10.25 9.00049C10.25 8.58627 9.91421 8.25049 9.5 8.25049V9.75049ZM9.5 8.25049C9.08579 8.25049 8.75 8.58627 8.75 9.00049C8.75 9.4147 9.08579 9.75049 9.5 9.75049V8.25049ZM12.6719 9.75049C13.0861 9.75049 13.4219 9.4147 13.4219 9.00049C13.4219 8.58627 13.0861 8.25049 12.6719 8.25049V9.75049ZM10.25 9.00049C10.25 8.58627 9.91421 8.25049 9.5 8.25049C9.08579 8.25049 8.75 8.58627 8.75 9.00049H10.25ZM8.75 12.063C8.75 12.4772 9.08579 12.813 9.5 12.813C9.91421 12.813 10.25 12.4772 10.25 12.063H8.75ZM8.75 9.00049C8.75 9.4147 9.08579 9.75049 9.5 9.75049C9.91421 9.75049 10.25 9.4147 10.25 9.00049H8.75ZM10.25 5.93799C10.25 5.52377 9.91421 5.18799 9.5 5.18799C9.08579 5.18799 8.75 5.52377 8.75 5.93799H10.25ZM6.32812 9.75049H9.5V8.25049H6.32812V9.75049ZM9.5 9.75049H12.6719V8.25049H9.5V9.75049ZM8.75 9.00049V12.063H10.25V9.00049H8.75ZM10.25 9.00049V5.93799H8.75V9.00049H10.25Z" fill="black"/>
-                    </svg> 
-                    </button>                   
+                    <div id="open-modal-2" class="w-full flex justify-end p-1 mb-2 cursor-pointer">
+                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.4634 1.16231L15.4895 2.74531C15.6851 2.9283 15.7947 3.17982 15.7931 3.44201C15.7916 3.70421 15.6789 3.9545 15.4811 4.13531L13.9415 5.93531L8.70195 12.0723C8.61123 12.1749 8.48911 12.2473 8.35299 12.2793L5.63633 12.8793C5.27586 12.8936 4.965 12.6384 4.92383 12.2943L5.05091 9.72131C5.06033 9.58995 5.1145 9.4652 5.20508 9.36631L10.2186 3.50131L11.9842 1.43331C12.3273 0.98505 12.9725 0.866839 13.4634 1.16231Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M1.20825 15.2415C0.794038 15.2415 0.458252 15.5773 0.458252 15.9915C0.458252 16.4057 0.794038 16.7415 1.20825 16.7415V15.2415ZM15.4791 16.7415C15.8933 16.7415 16.2291 16.4057 16.2291 15.9915C16.2291 15.5773 15.8933 15.2415 15.4791 15.2415V16.7415ZM10.91 3.21078C10.7495 2.82894 10.3098 2.64955 9.92798 2.81009C9.54614 2.97063 9.36675 3.41032 9.52729 3.79215L10.91 3.21078ZM14.1005 6.67143C14.5053 6.58364 14.7623 6.18431 14.6745 5.77951C14.5868 5.3747 14.1874 5.11771 13.7826 5.2055L14.1005 6.67143ZM1.20825 16.7415H15.4791V15.2415H1.20825V16.7415ZM9.52729 3.79215C9.77074 4.37117 10.269 5.19237 11.0076 5.82288C11.7601 6.46529 12.8182 6.94954 14.1005 6.67143L13.7826 5.2055C13.0869 5.35639 12.4918 5.11764 11.9815 4.68205C11.4573 4.23456 11.0833 3.62276 10.91 3.21078L9.52729 3.79215Z" fill="black"/>
+                        </svg>                        
+                    </div>                  
                 </div>
 
                 <!--Requirment list-->
@@ -303,14 +312,7 @@
                         <input type="checkbox" class="h-4 w-4 border-gray-300 rounded">
                         <span class="text-sm text-gray-600">Understanding the basics of making designs</span>
                     </label>
-
-                    <!--Add Requirment input-->
-                    <form class="flex items-center justify-between">
-                        <input type="checkbox" class="h-4 w-4 border-gray-300 rounded">
-                        <input type="text" class="p-1 w-fit border border-gray-300 rounded-lg outline-none">
-                        <button class="bg-[#338181] text-white rounded-lg hover:scale-95 transition-all text-xs p-2">Add</button>
-                    </form>
-                        
+   
                 </div>
             </div>
 
@@ -324,7 +326,7 @@
             </div>
 
             <!--submit button-->
-            <button type="submit" class="mt-4 w-full py-2 bg-[#338181] text-white font-semibold rounded-md hover:bg-[#368888] hover:scale-95 transition-all">Submit</button>
+            <button type="submit" class="mt-4 w-full py-2 bg-[#338181] text-white font-semibold rounded-md hover:bg-[#368888] hover:scale-95 transition-all">Save</button>
 
             </form>
             </div>
@@ -333,16 +335,18 @@
             <div class="w-full lg:w-2/3 bg-white p-6 rounded-lg shadow-lg">
 
             <!--project image-->
-            <div class="mb-4 relative">
-                <img src="https://via.placeholder.com/500x300"  class="rounded-lg w-full">
-                <button class="absolute top-0 right-0 bg-gray-700/25 hover:bg-gray-800/25 transition-all p-2 rounded-tr-lg">
-                    <svg width="19" height="20" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.5446 1.41674L22.6242 3.8572C22.9215 4.1393 23.0882 4.52706 23.0858 4.93128C23.0834 5.3355 22.9122 5.72136 22.6115 6.00011L20.2714 8.77511L12.3072 18.2363C12.1693 18.3944 11.9837 18.5061 11.7768 18.5554L7.64745 19.4804C7.09954 19.5025 6.62704 19.109 6.56445 18.5786L6.75762 14.6119C6.77194 14.4093 6.85428 14.217 6.99195 14.0646L14.6125 5.0227L17.2963 1.83453C17.8177 1.14346 18.7985 0.961213 19.5446 1.41674Z" stroke="#368888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M0.916748 23.5284C0.502534 23.5284 0.166748 23.8642 0.166748 24.2784C0.166748 24.6926 0.502534 25.0284 0.916748 25.0284V23.5284ZM22.6084 25.0284C23.0226 25.0284 23.3584 24.6926 23.3584 24.2784C23.3584 23.8642 23.0226 23.5284 22.6084 23.5284V25.0284ZM15.3054 4.73574C15.1468 4.3531 14.708 4.1715 14.3254 4.33012C13.9427 4.48874 13.7611 4.92752 13.9198 5.31016L15.3054 4.73574ZM20.4325 9.51248C20.8371 9.4235 21.0929 9.02341 21.0039 8.61887C20.9149 8.21433 20.5148 7.95852 20.1103 8.0475L20.4325 9.51248ZM0.916748 25.0284H22.6084V23.5284H0.916748V25.0284ZM13.9198 5.31016C14.2707 6.15666 14.9948 7.36616 16.061 8.2894C17.141 9.2245 18.6312 9.9087 20.4325 9.51248L20.1103 8.0475C18.9048 8.31266 17.8823 7.88223 17.0429 7.15541C16.1898 6.41674 15.5878 5.41703 15.3054 4.73574L13.9198 5.31016Z" fill="#368888"/>
-                    </svg>                                               
-                </button>
-            </div>
-
+            <form>
+                <div class="mb-4 relative">
+                    <img src="https://via.placeholder.com/500x300"  class="rounded-lg w-full">
+                    <button type="submit" class="absolute top-0 right-0 bg-gray-700/25 hover:bg-gray-800/25 transition-all p-2 rounded-tr-lg">
+                        <svg width="19" height="20" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.5446 1.41674L22.6242 3.8572C22.9215 4.1393 23.0882 4.52706 23.0858 4.93128C23.0834 5.3355 22.9122 5.72136 22.6115 6.00011L20.2714 8.77511L12.3072 18.2363C12.1693 18.3944 11.9837 18.5061 11.7768 18.5554L7.64745 19.4804C7.09954 19.5025 6.62704 19.109 6.56445 18.5786L6.75762 14.6119C6.77194 14.4093 6.85428 14.217 6.99195 14.0646L14.6125 5.0227L17.2963 1.83453C17.8177 1.14346 18.7985 0.961213 19.5446 1.41674Z" stroke="#368888" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M0.916748 23.5284C0.502534 23.5284 0.166748 23.8642 0.166748 24.2784C0.166748 24.6926 0.502534 25.0284 0.916748 25.0284V23.5284ZM22.6084 25.0284C23.0226 25.0284 23.3584 24.6926 23.3584 24.2784C23.3584 23.8642 23.0226 23.5284 22.6084 23.5284V25.0284ZM15.3054 4.73574C15.1468 4.3531 14.708 4.1715 14.3254 4.33012C13.9427 4.48874 13.7611 4.92752 13.9198 5.31016L15.3054 4.73574ZM20.4325 9.51248C20.8371 9.4235 21.0929 9.02341 21.0039 8.61887C20.9149 8.21433 20.5148 7.95852 20.1103 8.0475L20.4325 9.51248ZM0.916748 25.0284H22.6084V23.5284H0.916748V25.0284ZM13.9198 5.31016C14.2707 6.15666 14.9948 7.36616 16.061 8.2894C17.141 9.2245 18.6312 9.9087 20.4325 9.51248L20.1103 8.0475C18.9048 8.31266 17.8823 7.88223 17.0429 7.15541C16.1898 6.41674 15.5878 5.41703 15.3054 4.73574L13.9198 5.31016Z" fill="#368888"/>
+                        </svg>                                               
+                    </button>
+                </div>
+            </form>
+            
             <div>
 
                 <!--project name and status-->
@@ -406,6 +410,7 @@
                     </ul>
                 </div>
             </div>
+
         </div>
 
     </div>
@@ -416,8 +421,9 @@
     <!--uploud files modal-->
     <div id="modal-wrapper" class="fixed z-50 inset-0 hidden">
         <div class="flex items-center justify-center min-h-screen min-w-screen bg-gray-200 bg-opacity-50 transition-all">
+
             <!--modal box-->
-            <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
+            <form class="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
                 <!-- Upload header -->
                 <div class="flex items-center space-x-2 mb-4 justify-between">
                     <h2 class="text-lg font-semibold text-gray-700">Upload files</h2>
@@ -429,7 +435,7 @@
                     <div class="text-center">
                         <p class="mb-1 text-sm text-gray-500">Choose a file or drag & drop it here</p>
                         <p class="mb-4 text-xs text-gray-400">JPEG, PNG formats</p>
-                        <label class="cursor-pointer inline-block py-2 px-4 bg-blue-500 text-white font-semibold rounded-md">
+                        <label class="cursor-pointer inline-block py-2 px-4 bg-[#368888] hover:bg-[#338181] text-white font-semibold rounded-md">
                             Browse File
                             <input type="file" class="hidden" multiple>
                         </label>
@@ -449,7 +455,7 @@
                                 <p class="text-xs text-gray-400">Uploading... 60 KB of 120 KB</p>
                             </div>
                         </div>
-                        <div class="absolute inset-x-0 bottom-0 h-1 bg-blue-500 rounded-md" style="width: 50%;"></div>
+                        <div class="absolute inset-x-0 bottom-0 h-1 bg-[#A7A7A7] rounded-md" style="width: 50%;"></div>
                     </div>
         
                     <!-- Example 2 -->
@@ -467,10 +473,72 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                         </svg>
                     </div>
+
+                    <Button type="submit" class="w-full flex justify-center rounded-md py-1 mt-2 bg-[#368888] text-white hover:bg-[#338181] transition-all">Add</Button>
                 </div>
-            </div>
+            </form>
 
         </div>
+    </div>
+
+    <!--requirment modal-->
+    <div id="modal-wrapper-2" class="fixed z-50 inset-0 hidden">
+        <div class="flex items-center justify-center min-h-screen min-w-screen bg-gray-200 bg-opacity-50 transition-all">
+
+            <!--modal box-->
+            <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-6">
+
+                <!--modal header-->
+                <div class="flex items-center space-x-2 mb-7 pb-7 justify-between border-b">
+                    <h2 class="text-lg font-semibold text-gray-700">Edit Requirements</h2>
+                    <div id="close-modal-2" class="flex items-center justify-center bg-gray-200 rounded-full h-8 w-8 cursor-pointer">X</div>
+                </div>
+
+                    <!--Requirment list-->
+                    <div class="space-y-5 mb-3">
+
+                        <!--requirment 1-->
+                        <label class="flex items-center justify-between space-x-2">
+                            <div class="flex items-center space-x-2">
+                                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded">
+                                <span class="text-sm text-gray-600">Understanding the basics of making designs</span>
+                            </div>
+                            <button>
+                                <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5142 6.05908H2.48567C1.98728 6.05908 1.58325 6.47592 1.58325 6.99012V14.4418C1.58325 15.985 2.79581 17.236 4.29159 17.236H9.70825C10.4265 17.236 11.1154 16.9416 11.6233 16.4176C12.1312 15.8936 12.4166 15.1829 12.4166 14.4418V6.99012C12.4166 6.47592 12.0126 6.05908 11.5142 6.05908Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.25 3.82386L10.1352 3.58803C9.54139 2.36253 8.32742 1.58838 6.99946 1.58838C5.67149 1.58838 4.45752 2.36253 3.86375 3.58803L3.75 3.82386H10.25Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5.944 9.78439C5.944 9.37018 5.60822 9.03439 5.194 9.03439C4.77979 9.03439 4.444 9.37018 4.444 9.78439H5.944ZM4.444 13.5097C4.444 13.9239 4.77979 14.2597 5.194 14.2597C5.60822 14.2597 5.944 13.9239 5.944 13.5097H4.444ZM9.55583 9.78439C9.55583 9.37018 9.22005 9.03439 8.80583 9.03439C8.39162 9.03439 8.05583 9.37018 8.05583 9.78439H9.55583ZM8.05583 13.5097C8.05583 13.9239 8.39162 14.2597 8.80583 14.2597C9.22005 14.2597 9.55583 13.9239 9.55583 13.5097H8.05583ZM10.2499 3.07373C9.8357 3.07373 9.49992 3.40952 9.49992 3.82373C9.49992 4.23794 9.8357 4.57373 10.2499 4.57373V3.07373ZM12.4166 4.57373C12.8308 4.57373 13.1666 4.23794 13.1666 3.82373C13.1666 3.40952 12.8308 3.07373 12.4166 3.07373V4.57373ZM3.74992 4.57373C4.16413 4.57373 4.49992 4.23794 4.49992 3.82373C4.49992 3.40952 4.16413 3.07373 3.74992 3.07373V4.57373ZM1.58325 3.07373C1.16904 3.07373 0.833252 3.40952 0.833252 3.82373C0.833252 4.23794 1.16904 4.57373 1.58325 4.57373V3.07373ZM4.444 9.78439V13.5097H5.944V9.78439H4.444ZM8.05583 9.78439V13.5097H9.55583V9.78439H8.05583ZM10.2499 4.57373H12.4166V3.07373H10.2499V4.57373ZM3.74992 3.07373H1.58325V4.57373H3.74992V3.07373Z" fill="black"/>
+                                </svg> 
+                            </button>  
+                        </label>
+                
+                        <!--requirment 2-->
+                        <label class="flex items-center justify-between space-x-2">
+                            <div class="flex items-center space-x-2">
+                                <input type="checkbox" class="h-4 w-4 border-gray-300 rounded">
+                                <span class="text-sm text-gray-600">Understanding the basics of making designs</span>
+                            </div>
+                            <button>
+                                <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.5142 6.05908H2.48567C1.98728 6.05908 1.58325 6.47592 1.58325 6.99012V14.4418C1.58325 15.985 2.79581 17.236 4.29159 17.236H9.70825C10.4265 17.236 11.1154 16.9416 11.6233 16.4176C12.1312 15.8936 12.4166 15.1829 12.4166 14.4418V6.99012C12.4166 6.47592 12.0126 6.05908 11.5142 6.05908Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M10.25 3.82386L10.1352 3.58803C9.54139 2.36253 8.32742 1.58838 6.99946 1.58838C5.67149 1.58838 4.45752 2.36253 3.86375 3.58803L3.75 3.82386H10.25Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5.944 9.78439C5.944 9.37018 5.60822 9.03439 5.194 9.03439C4.77979 9.03439 4.444 9.37018 4.444 9.78439H5.944ZM4.444 13.5097C4.444 13.9239 4.77979 14.2597 5.194 14.2597C5.60822 14.2597 5.944 13.9239 5.944 13.5097H4.444ZM9.55583 9.78439C9.55583 9.37018 9.22005 9.03439 8.80583 9.03439C8.39162 9.03439 8.05583 9.37018 8.05583 9.78439H9.55583ZM8.05583 13.5097C8.05583 13.9239 8.39162 14.2597 8.80583 14.2597C9.22005 14.2597 9.55583 13.9239 9.55583 13.5097H8.05583ZM10.2499 3.07373C9.8357 3.07373 9.49992 3.40952 9.49992 3.82373C9.49992 4.23794 9.8357 4.57373 10.2499 4.57373V3.07373ZM12.4166 4.57373C12.8308 4.57373 13.1666 4.23794 13.1666 3.82373C13.1666 3.40952 12.8308 3.07373 12.4166 3.07373V4.57373ZM3.74992 4.57373C4.16413 4.57373 4.49992 4.23794 4.49992 3.82373C4.49992 3.40952 4.16413 3.07373 3.74992 3.07373V4.57373ZM1.58325 3.07373C1.16904 3.07373 0.833252 3.40952 0.833252 3.82373C0.833252 4.23794 1.16904 4.57373 1.58325 4.57373V3.07373ZM4.444 9.78439V13.5097H5.944V9.78439H4.444ZM8.05583 9.78439V13.5097H9.55583V9.78439H8.05583ZM10.2499 4.57373H12.4166V3.07373H10.2499V4.57373ZM3.74992 3.07373H1.58325V4.57373H3.74992V3.07373Z" fill="black"/>
+                                </svg> 
+                            </button>  
+                        </label>
+
+                        <!--Add Requirment input-->
+                        <form class="flex items-center justify-between gap-3">
+                            <!-- <input type="checkbox" class="h-4 w-4 border-gray-300 rounded"> -->
+                            <input type="text" class="p-1 w-full border border-gray-300 rounded-lg outline-none">
+                            <button type="submit" class="bg-[#338181] text-white rounded-lg hover:scale-95 transition-all text-xs px-4 py-2">Add</button>
+                        </form>
+
+                    </div>
+
+            </div>
+        </div>
+                            
     </div>
 
     <!--for modal open and close-->
@@ -482,7 +550,16 @@
         document.getElementById("close-modal").addEventListener("click", ()=>{
             document.getElementById("modal-wrapper").classList.add("hidden")
         })
+    </script>
 
+    <script>
+        document.getElementById("open-modal-2").addEventListener("click", ()=>{
+            document.getElementById("modal-wrapper-2").classList.remove("hidden")
+        })
+
+        document.getElementById("close-modal-2").addEventListener("click", ()=>{
+            document.getElementById("modal-wrapper-2").classList.add("hidden")
+        })
     </script>
 
 </body>
